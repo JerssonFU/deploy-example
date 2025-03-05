@@ -1,7 +1,7 @@
 {
   "name": "deploy-example",
   "private": true,
-  "homepage": "https://JerssonFU.github.io/example-deploy",
+  "homepage": "https://jerssonfu.github.io/example-deploy",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
