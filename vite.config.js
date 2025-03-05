@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base:"/deploy-example/",
   plugins: [react()],
-  base:"https://JerssonFU.github.io/example-deploy"
 })

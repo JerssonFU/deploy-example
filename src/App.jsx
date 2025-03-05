@@ -10,7 +10,7 @@ import PowerBIPage from "./pages/PowerBiPage";
 
 function App() {
   return (
-    <Router>
+    <Router basename="deploy-example">
       <Routes>
         {/* Página de inicio */}
         <Route path="/" element={<Home />} />
