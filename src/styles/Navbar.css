@@ -1,0 +1,176 @@
+/* Establece que el contenido no se desborde */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Elimina el scroll horizontal */
+}
+
+/* Navbar con contorno opaco tipo cataratas */
+.navbar {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent; /* Mantiene el fondo del navbar transparente */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important; /* Centra verticalmente los elementos */
+  padding: 20px 20px;
+  height: 80px; /* Asegura una altura mayor del navbar */
+  z-index: 1000; /* Asegura que el navbar esté sobre el contenido */
+  transition: none; /* Sin transiciones para mantenerlo transparente */
+  animation: fadeIn 0.7s ease-out forwards, slideDown 0.7s ease-out forwards; 
+  backdrop-filter: blur(5px); /* Aplica un desenfoque tipo cataratas al fondo */
+  background-color: rgba(176, 176, 176, 0.1); /* Añade un fondo ligeramente opaco */
+}
+
+
+/* Animación de desvanecimiento y desplazamiento */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Animación para todos los elementos al mismo tiempo */
+.navbar-left, .navbar-right, .logo {
+  opacity: 0; /* Inicialmente invisibles */
+  transform: translateY(-10px);
+  animation: fadeIn 0.7s ease-out forwards, slideDown 0.7s ease-out forwards;
+}
+
+/* Logo animado con efecto 3D y dorado */
+.logo {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.6rem !important;
+  font-weight: 900; /* Más grosor */
+  color: gold; /* Color dorado */
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6), 0px 0px 5px rgba(255, 223, 0, 0.8); /* Efecto 3D */
+  position: relative; /* Necesario para la línea deslizante */
+  margin-left: 80px; /* Ajusta este valor según cuánto quieras moverlo */
+}
+
+
+.logo::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Espacio debajo del texto */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(245, 245, 245); /* Color dorado */
+  transition: width 0.3s ease-in-out;
+}
+
+.logo:hover {
+  color: #69cdff; /* Azul al pasar el mouse */
+  text-decoration: none; /* Asegura que no aparezca subrayado */
+}
+
+/* Navbar derecha con letras doradas y efecto 3D */
+.navbar-right {
+  display: flex;
+  gap: 15px;
+  margin-right: 100px;
+}
+
+.navbar-right a {
+  font-size: 1.4rem !important;
+  font-weight: 700; /* Más grosor */
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6), 0px 0px 5px rgba(255, 223, 0, 0.8); /* Efecto 3D */
+  position: relative; /* Necesario para la línea deslizante */
+}
+
+.navbar-right a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Espacio debajo del texto */
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-right a:hover {
+  color: #69cdff; /* Azul al pasar el mouse */
+  text-decoration: none; /* Asegura que no aparezca subrayado */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  /* Navbar se mantiene centrado */
+  .navbar {
+    justify-content: center; /* Centra los elementos del navbar */
+    padding: 10px 20px;
+  }
+
+  /* Desaparece el logo en pantallas pequeñas */
+  .logo {
+    display: none; /* El logo no será visible en pantallas pequeñas */
+  }
+
+  /* Navbar derecha con mejor ajuste */
+  .navbar-right {
+    display: flex;
+    gap: 10px;
+    margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
+    margin-left: 0; /* Elimina el margen izquierdo */
+    justify-content: center; /* Alinea los links al centro */
+  }
+
+  /* Mostrar hamburguesa (agregar código de hamburguesa en HTML y JS si es necesario) */
+  .navbar-right a {
+    font-size: 1.2rem; /* Aumenta ligeramente el tamaño de los links */
+  }
+}
+
+/* Línea de subrayado animada */
+.navbar a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(101, 229, 255);
+  transition: width 0.3s ease;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover::after, .hero-title:hover::after {
+  width: 100%;
+}
+
+
+@media (max-width: 480px) {
+  /* Ajustes más pequeños para pantallas más pequeñas */
+  .navbar {
+    padding: 15px 20px ; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  /* Ajusta el tamaño de los links */
+  .navbar-right a {
+    font-size: 1rem; /* Ajusta el tamaño de fuente para pantallas muy pequeñas */
+  }
+}
+
+

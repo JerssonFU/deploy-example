@@ -1,0 +1,127 @@
+.react-page-container {
+    text-align: center;
+    padding: 0px;
+  }
+
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/cerebro.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(8px) !important;
+    z-index: -1;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    height: calc(100vh - 60px); /* Resta el espacio ocupado por el navbar */
+    margin: 300px auto 0 auto; /* Agrega un margen superior manual */
+  }
+  
+  .description {
+    font-size: 1.5rem !important;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px; /* Espaciado entre cuadros */
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  .text-box {
+    background-color: #ffffff;
+    border: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .visualizar-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .visualizar-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para el modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-content iframe {
+    border-radius: 10px;
+  }
+  
+ /* Botón de cierre (rojo) */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px; /* Cambiado para que esté en la esquina superior derecha */
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px; /* Tamaño de la "X" */
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar la "X" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .close-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+  }
+  
+  
