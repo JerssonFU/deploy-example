@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar"; 
 import Home from "./pages/Home";
 import PageWithNavbar from "./pages/PageWithNavbar";
@@ -9,17 +9,21 @@ import SMSSPage from "./pages/SMSSPage";
 import BIAPage from "./pages/PythonPage";
 
 function App() {
+  const location = useLocation(); // Obtiene la ruta actual
+
   return (
     <>
-      <Navbar /> {/* Navbar solo aquí, así no se repite en cada cambio de página */}
+      {/* Mostrar Navbar SOLO si la ruta NO es "/" (Home.jsx) */}
+      {location.pathname !== "/" && <Navbar />}
+
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="Inicio" element={<PageWithNavbar />} />
-        <Route path="contact" element={<ContactPage />} />
-        <Route path="Certificaciones" element={<ReactPage />} />
-        <Route path="PowerBI" element={<PowerBIPage />} />
-        <Route path="SqlServer" element={<SMSSPage />} />
-        <Route path="Python" element={<BIAPage />} />
+        <Route path="/" element={<Home />} /> {/* Home sin Navbar */}
+        <Route path="/Inicio" element={<PageWithNavbar />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/Certificaciones" element={<ReactPage />} />
+        <Route path="/PowerBI" element={<PowerBIPage />} />
+        <Route path="/SqlServer" element={<SMSSPage />} />
+        <Route path="/Python" element={<BIAPage />} />
       </Routes>
     </>
   );
