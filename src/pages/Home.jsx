@@ -1,7 +1,10 @@
 import "../styles/Home.css";
 import { FaFilePdf, FaWhatsapp, FaProjectDiagram } from "react-icons/fa"; // Importamos los íconos
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       <div className="text-container">
@@ -16,7 +19,7 @@ function Home() {
       <div className="buttons-container">
         {/* Botón Ver Proyectos con icono */}
         <button
-          onClick={() => (window.location.href = "/inicio")}
+          onClick={() => navigate("/deploy-example/Inicio")}
           className="animated-button"
         >
           <FaProjectDiagram className="button-icon" /> Proyectos
@@ -24,13 +27,15 @@ function Home() {
 
         {/* Botón de Descargar CV con icono */}
         <a
-          href="/CV_Jersson.pdf" // Ruta del PDF
-          download="CV_Jersson_Fernandez.pdf"
-          className="cv-download-button animated-button"
-        >
-          <FaFilePdf className="button-icon" />
-          Descargar CV
-        </a>
+  href="/CV_Jersson_Fernandez.pdf"
+  download="CV_Jersson_Fernandez.pdf"
+  className="cv-download-button animated-button"
+>
+  <FaFilePdf className="button-icon" />
+  Descargar CV
+</a>
+
+
 
         {/* Botón de WhatsApp con icono mejor alineado */}
         <a
