@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout"; // Asegurar que Layout está cargado
+import Layout from "./components/Layout"; // Layout con Navbar
 import Home from "./pages/Home";
 import PageWithNavbar from "./pages/PageWithNavbar";
 import ContactPage from "./pages/ContactPage";
@@ -11,8 +11,11 @@ import BIAPage from "./pages/PythonPage";
 function App() {
   return (
     <Routes>
+      {/* Home.jsx sin Navbar */}
+      <Route path="/" element={<Home />} />
+
+      {/* Todas las demás páginas usan Layout (con Navbar) */}
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
         <Route path="Inicio" element={<PageWithNavbar />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="Certificaciones" element={<ReactPage />} />
