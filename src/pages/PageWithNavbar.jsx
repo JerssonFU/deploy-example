@@ -1,12 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import "../styles/PageWithNavbar.css";
 
 function PageWithNavbar() {
   return (
     <div>
       <div className="navbar-container">
-        <Navbar />
       </div>
       
       <div className="hero-container">

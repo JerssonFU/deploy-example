@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout"; // Layout con Navbar
+import Navbar from "./components/Navbar"; 
 import Home from "./pages/Home";
 import PageWithNavbar from "./pages/PageWithNavbar";
 import ContactPage from "./pages/ContactPage";
@@ -10,20 +10,18 @@ import BIAPage from "./pages/PythonPage";
 
 function App() {
   return (
-    <Routes>
-      {/* Home.jsx sin Navbar */}
-      <Route path="/" element={<Home />} />
-
-      {/* Todas las demás páginas usan Layout (con Navbar) */}
-      <Route path="/" element={<Layout />}>
+    <>
+      <Navbar /> {/* Navbar solo aquí, así no se repite en cada cambio de página */}
+      <Routes>
+        <Route index element={<Home />} />
         <Route path="Inicio" element={<PageWithNavbar />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="Certificaciones" element={<ReactPage />} />
         <Route path="PowerBI" element={<PowerBIPage />} />
         <Route path="SqlServer" element={<SMSSPage />} />
         <Route path="Python" element={<BIAPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
 

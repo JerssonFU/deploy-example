@@ -14,16 +14,18 @@ body, html {
 
 /* Fondo de la página con efecto Parallax */
 body::before {
-  content: '';
-  position: fixed;  /* Fija la imagen para el efecto parallax */
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('src/assets/cerebro.jpg') no-repeat center center/cover;
+  background: url("/assets/cerebro.jpg") no-repeat center center/cover;
   z-index: -1;
-  background-attachment: fixed; /* Activa el efecto parallax */
+  background-attachment: fixed;
 }
+
+
 
 
 /* Contenedor de perfil con descripción */

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
 import "../styles/CertificacionesPage.css";
 import cert1 from "../assets/cert1.png";
 import cert2 from "../assets/cert2.png";
@@ -33,7 +32,6 @@ function CertificacionesPage() {
   return (
     <div className="cert-page-container">
       <div className="cert-page-background"></div>
-      <Navbar />
       <div className="cert-page-content">
         <h1 className="cert-page-title">CERTIFICACIONES</h1>
         <p className="cert-page-description">Certificaciones en diversas áreas profesionales</p>

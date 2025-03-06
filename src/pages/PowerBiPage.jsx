@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
 import "../styles/PowerBiPage.css";
 import dash1 from "../assets/dash1.png";
 
@@ -29,7 +28,6 @@ function PowerBIPage() {
   return (
     <div className="powerbi-page-container">
       <div className="background-container"></div>
-      <Navbar />
       <div className="content-container">
         <h1 className="title">PROYECTOS DE POWER BI</h1>
         <p className="description">Reportes, Dashboards, funciones DAX, Análisis</p>
