@@ -1,33 +1,26 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import PageWithNavbar from "./pages/PageWithNavbar";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout"; // Asegurar que Layout está cargado
 import Home from "./pages/Home";
+import PageWithNavbar from "./pages/PageWithNavbar";
 import ContactPage from "./pages/ContactPage";
-import ReactPage from "./pages/CertificacionesPage";  // Importa la nueva página
-import JavaPage from "./pages/PowerBiPage";    // Importa la nueva página
-import SMSSPage from "./pages/SMSSPage";    // Importa la nueva página
-import BIAPage from "./pages/PythonPage";      // Importa la nueva página
+import ReactPage from "./pages/CertificacionesPage";
 import PowerBIPage from "./pages/PowerBiPage";
+import SMSSPage from "./pages/SMSSPage";
+import BIAPage from "./pages/PythonPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Página de inicio */}
-        <Route path="/" element={<Home />} />
-        
-        {/* Página con Navbar */}
-        <Route path="/deploy-example/Inicio" element={<PageWithNavbar />} />
-
-        {/* Página de contacto */}
-        <Route path="/deploy-example/contact" element={<ContactPage />} />
-
-        {/* Nuevas páginas */}
-        <Route path="/deploy-example/Certificaciones" element={<ReactPage />} />
-        <Route path="/deploy-example/PowerBI" element={<PowerBIPage />} />
-        <Route path="/deploy-example/SqlServer" element={<SMSSPage />} />
-        <Route path="/deploy-example/Python" element={<BIAPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="Inicio" element={<PageWithNavbar />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="Certificaciones" element={<ReactPage />} />
+        <Route path="PowerBI" element={<PowerBIPage />} />
+        <Route path="SqlServer" element={<SMSSPage />} />
+        <Route path="Python" element={<BIAPage />} />
+      </Route>
+    </Routes>
   );
 }
 

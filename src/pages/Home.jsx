@@ -1,9 +1,10 @@
 import "../styles/Home.css";
-import { FaFilePdf, FaWhatsapp, FaProjectDiagram } from "react-icons/fa"; // Importamos los íconos
+import { FaFilePdf, FaWhatsapp, FaProjectDiagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
+  const cvPath = `${import.meta.env.BASE_URL}CV_Jersson_Fernandez.pdf`; // Asegurar la descarga correcta
 
   return (
     <div className="home-container">
@@ -17,33 +18,18 @@ function Home() {
         </p>
       </div>
       <div className="buttons-container">
-        {/* Botón Ver Proyectos con icono */}
-        <button
-          onClick={() => navigate("/deploy-example/Inicio")}
-          className="animated-button"
-        >
+        {/* Botón Ver Proyectos */}
+        <button onClick={() => navigate("/Inicio")} className="animated-button">
           <FaProjectDiagram className="button-icon" /> Proyectos
         </button>
 
-        {/* Botón de Descargar CV con icono */}
-        <a
-  href="/CV_Jersson_Fernandez.pdf"
-  download="CV_Jersson_Fernandez.pdf"
-  className="cv-download-button animated-button"
->
-  <FaFilePdf className="button-icon" />
-  Descargar CV
-</a>
+        {/* Botón de Descargar CV */}
+        <a href={cvPath} download="CV_Jersson_Fernandez.pdf" className="cv-download-button animated-button">
+          <FaFilePdf className="button-icon" /> Descargar CV
+        </a>
 
-
-
-        {/* Botón de WhatsApp con icono mejor alineado */}
-        <a
-          href="https://wa.me/961642598"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-link animated-button"
-        >
+        {/* Botón de WhatsApp */}
+        <a href="https://wa.me/961642598" target="_blank" rel="noopener noreferrer" className="whatsapp-link animated-button">
           <FaWhatsapp className="button-icon" /> Contáctame
         </a>
       </div>
