@@ -8,7 +8,7 @@ function Navbar() {
         <Link to="/" className="logo">Mi Portafolio</Link>
       </div>
       <div className="navbar-right">
-        <Link to="/Inicio">Inicio</Link>
+        <Link to="Inicio">Inicio</Link>
         <Link to="/Certificaciones">Certificaciones</Link>
         <Link to="/PowerBI">Power BI</Link>
         <Link to="/SqlServer">SMSS</Link>

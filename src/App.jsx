@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import PageWithNavbar from "./pages/PageWithNavbar";
 import Home from "./pages/Home";
 import ContactPage from "./pages/ContactPage";
@@ -10,26 +10,25 @@ import PowerBIPage from "./pages/PowerBiPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         {/* Página de inicio */}
         <Route path="/" element={<Home />} />
-
+        
         {/* Página con Navbar */}
-        <Route path="/Inicio" element={<PageWithNavbar />} />
+        <Route path="/deploy-example/Inicio" element={<PageWithNavbar />} />
 
         {/* Página de contacto */}
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/deploy-example/contact" element={<ContactPage />} />
 
         {/* Nuevas páginas */}
-        <Route path="/Certificaciones" element={<ReactPage />} />
-        <Route path="/PowerBI" element={<PowerBIPage />} />
-        <Route path="/SqlServer" element={<SMSSPage />} />
-        <Route path="/Python" element={<BIAPage />} />
+        <Route path="/deploy-example/Certificaciones" element={<ReactPage />} />
+        <Route path="/deploy-example/PowerBI" element={<PowerBIPage />} />
+        <Route path="/deploy-example/SqlServer" element={<SMSSPage />} />
+        <Route path="/deploy-example/Python" element={<BIAPage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
 export default App;
-
