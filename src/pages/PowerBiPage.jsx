@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "../styles/PowerBiPage.css";
-import dash1 from "../assets/dash1.png";
+
+const dash1 = "/assets/dash1.png"; // Ruta absoluta desde public/
+
+const items = [
+  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+];
 
 function PowerBIPage() {
   const [showModal, setShowModal] = useState(false);
   const [activeLink, setActiveLink] = useState("");
-
-  const items = [
-    { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-    { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-    { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-    { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-    { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-    { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-  ];
 
   const handleOpenModal = (link) => {
     setActiveLink(link);

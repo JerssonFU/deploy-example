@@ -45,7 +45,7 @@
 }
 
 .content {
-  background-image: url('../assets/n1.jpg'); /* Ruta relativa desde el archivo CSS */
+  background-image: url('public/assets/n1.jpg'); /* Ruta relativa desde el archivo CSS */
   background-size: cover; /* Asegura que la imagen cubra toda el área */
   background-position: center;
   background-repeat: no-repeat;
@@ -55,8 +55,7 @@
   text-align: center;
   padding: 20px;
   position: relative; /* Necesario si agregas contenido adicional */
-  z-index: 0; /* Envía el fondo detrás del navbar */
-}
+  z-index: 0; /* Envía el fondo detrás del navbar */}
 
 /* Responsividad */
 @media (max-width: 768px) {

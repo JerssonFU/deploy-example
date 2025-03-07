@@ -21,27 +21,27 @@ function PageWithNavbar() {
         <h2 className="tools-title">Manejo de Herramientas Informáticas</h2>
         <div className="tools-grid">
           <div className="tool-box">
-            <img src="src/assets/sql.png" alt="SQL Server" className="tool-img" />
+            <img src="public/assets/sql.png" alt="SQL Server" className="tool-img" />
             <p className="tool-info">SQL Server</p>
           </div>
           <div className="tool-box">
-            <img src="src/assets/react.png" alt="React" className="tool-img" />
+            <img src="public/assets/react.png" alt="React" className="tool-img" />
             <p className="tool-info">React</p>
           </div>
           <div className="tool-box">
-            <img src="src/assets/excel.png" alt="Excel" className="tool-img" />
+            <img src="public/assets/excel.png" alt="Excel" className="tool-img" />
             <p className="tool-info">Excel</p>
           </div>
           <div className="tool-box">
-            <img src="src/assets/powerbi.png" alt="Power BI" className="tool-img" />
+            <img src="public/assets/powerbi.png" alt="Power BI" className="tool-img" />
             <p className="tool-info">Power BI</p>
           </div>
           <div className="tool-box">
-            <img src="src/assets/git.png" alt="Git" className="tool-img" />
+            <img src="public/assets/git.png" alt="Git" className="tool-img" />
             <p className="tool-info">Git</p>
           </div>
           <div className="tool-box">
-            <img src="src/assets/python.png" alt="Python" className="tool-img" />
+            <img src="public/assets/python.png" alt="Python" className="tool-img" />
             <p className="tool-info">Python</p>
           </div>
         </div>

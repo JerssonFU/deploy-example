@@ -1,127 +1,136 @@
-.react-page-container {
-    text-align: center;
-    padding: 0px;
+/* 📌 Contenedor principal */
+.powerbi-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* 📌 Fondo con efecto difuminado */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/cerebro.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(8px) !important;
+  z-index: -1;
+}
+
+/* 📌 Contenedor de título y descripción */
+.content-container {
+  position: absolute;
+  top: 20%; /* 📌 Centrado vertical */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 📌 Título */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* 📌 Descripción */
+.description {
+  font-size: 1.8rem;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 📌 Cuadrícula de proyectos Power BI */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+
+  /* 📌 Mantiene la misma posición */
+  position: absolute;
+  top: 535% !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  padding: 20px;
+  justify-content: center;
+}
+
+/* 📌 Estilos de los cuadros */
+.text-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 510px;
+  height: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 📌 Imágenes dentro de los cuadros */
+.text-box img {
+  width: 500px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+/* 📌 Botón dentro del cuadro */
+.visualizar-button {
+  width: 40%;
+  padding: 14px;
+  font-size: 17px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.visualizar-button:hover {
+  background-color: #0056b3;
+}
+
+/* 📌 RESPONSIVE DESIGN */
+@media (max-width: 1100px) {
+  .title {
+      font-size: 2.5rem;
   }
 
-  .background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../assets/cerebro.jpg") no-repeat center center;
-    background-size: cover;
-    filter: blur(8px) !important;
-    z-index: -1;
-  }
-  
-  .content-container {
-    display: flex;
-    flex-direction: column; /* Alinear elementos en columna */
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    height: calc(100vh - 60px); /* Resta el espacio ocupado por el navbar */
-    margin: 300px auto 0 auto; /* Agrega un margen superior manual */
-  }
-  
   .description {
-    font-size: 1.5rem !important;
+      font-size: 1.5rem;
   }
-  
+
   .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 20px; /* Espaciado entre cuadros */
-    margin: 20px auto;
-    padding: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 1000px;
   }
-  
-  .text-box {
-    background-color: #ffffff;
-    border: transparent;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 800px) {
+  .title {
+      font-size: 2rem;
   }
-  
-  .text-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  .description {
+      font-size: 1.2rem;
   }
-  
-  .visualizar-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+  .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 100%;
   }
-  
-  .visualizar-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Estilos para el modal */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 90%;
-    max-height: 90%;
-    width: 80%;
-    height: 80%;
-    overflow: auto;
-    position: relative;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  .modal-content iframe {
-    border-radius: 10px;
-  }
-  
- /* Botón de cierre (rojo) */
-.close-button {
-    position: absolute;
-    top: 15px;
-    right: 15px; /* Cambiado para que esté en la esquina superior derecha */
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px; /* Tamaño de la "X" */
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrar la "X" */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .close-button:hover {
-    background-color: #ff1a1a;
-    transform: scale(1.1); /* Efecto al pasar el mouse */
-  }
-  
-  
+}
