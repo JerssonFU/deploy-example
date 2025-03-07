@@ -24,12 +24,14 @@ function Home() {
 
         {/* Botón de Descargar CV con icono */}
         <a 
-          href="public/CV_Jersson_Fernandez.pdf"
-          download="CV_Jersson_Fernandez.pdf" 
-          className="cv-download-button animated-button"
-        >
-          <FaFilePdf className="button-icon" /> Descargar CV
-        </a>
+  href="/deploy-example/CV_Jersson_Fernandez.pdf"
+  download="CV_Jersson_Fernandez.pdf" 
+  className="cv-download-button animated-button"
+>
+  <FaFilePdf className="button-icon" /> Descargar CV
+</a>
+
+
 
         {/* Botón de WhatsApp con icono mejor alineado */}
         <a 
