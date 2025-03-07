@@ -23,12 +23,21 @@ function Home() {
         </button>
 
         {/* Botón de Descargar CV con icono */}
-        <a href="/CV_Jersson.pdf" download="CV_Jersson_Fernandez.pdf" className="cv-download-button animated-button">
+        <a 
+          href="public/CV_Jersson_Fernandez.pdf"
+          download="CV_Jersson_Fernandez.pdf" 
+          className="cv-download-button animated-button"
+        >
           <FaFilePdf className="button-icon" /> Descargar CV
         </a>
 
         {/* Botón de WhatsApp con icono mejor alineado */}
-        <a href="https://wa.me/961642598" target="_blank" rel="noopener noreferrer" className="whatsapp-link animated-button">
+        <a 
+          href="https://wa.me/961642598" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="whatsapp-link animated-button"
+        >
           <FaWhatsapp className="button-icon" /> Contáctame
         </a>
       </div>

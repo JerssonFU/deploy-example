@@ -168,20 +168,20 @@
 /* 📌 RESPONSIVE SOLO PARA DISPOSITIVOS MÓVILES */
 @media (max-width: 768px) {
     .certificaciones-title {
-        font-size: 2.2rem;
-        margin-top: 40px;
+        font-size: 6vw; /* 📌 Ajuste dinámico según el tamaño de la pantalla */
+        margin-top: 0vh; /* 📌 Espaciado dinámico */
     }
 
     .certificaciones-subtitle {
-        font-size: 1.3rem;
-        margin-top: 40px;
+        font-size: 4vw; /* 📌 Ajuste dinámico según el tamaño de la pantalla */
+        margin-top: -2vh; /* 📌 Espaciado dinámico */
     }
 
     /* 📌 Ajuste para que el primer cuadro inicie desde el centro */
     .certificaciones-grid {
-        grid-template-columns: repeat(1, 1fr); /* 📌 1 columna en móviles */
+        grid-template-columns: 1fr; /* 📌 1 columna en móviles */
         width: 90%;
-        margin-top: 500px; /* 📌 Baja los cuadros para que no tapen el navbar */
+        margin-top: 40vh; /* 📌 Baja los cuadros para que no tapen el navbar */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -193,7 +193,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 15px;
+        padding: 4vw;
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -202,16 +202,16 @@
     .cert-img {
         width: 100%;
         height: auto; /* 📌 Permite que la imagen se adapte al cuadro */
-        max-height: 220px; /* 📌 Máximo alto para que no desborde */
+        max-height: 200px; /* 📌 Máximo alto para que no desborde */
         object-fit: cover;
         border-radius: 8px;
     }
 
     .cert-button {
         width: 80%;
-        font-size: 14px;
-        margin-top: 10px; /* 📌 Espaciado entre imagen y botón */
-        padding: 10px;
+        font-size: 3.5vw; /* 📌 Ajuste dinámico según el tamaño de la pantalla */
+        margin-top: 2vh; /* 📌 Espaciado entre imagen y botón */
+        padding: 2vw;
         background-color: #007bff;
         color: #fff;
         border: none;
@@ -226,28 +226,51 @@
 
     /* 📌 Centrar los botones del navbar en móviles */
     .navbar {
-        font-size: 14px !important; /* 📌 Letras más pequeñas */
-        padding: 8px 12px; /* 📌 Espaciado más compacto */
-        height: auto; /* 📌 Permite que el navbar crezca si hay más contenido */
+        font-size: 4vw !important; /* 📌 Ajuste dinámico del tamaño de la fuente */
+        padding: 2vw 3vw; /* 📌 Espaciado más compacto */
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center; /* 📌 Centrar los botones */
+        justify-content: center; /* 📌 Centrar el contenido */
     }
 
     .navbar a {
-        font-size: 15px !important; /* 📌 Reduce el tamaño de los enlaces */
-        padding: 12px 12px;
+        font-size: 4vw !important; /* 📌 Ajuste dinámico de tamaño de enlace */
         text-align: center;
         display: block;
         width: 100%;
+        margin-bottom: 5px; /* 📌 Espaciado entre los enlaces */
+    }
+
+    /* 📌 Contenedor de los botones */
+    .navbar-links {
+        display: flex;
+        flex-wrap: wrap; /* 📌 Permite que los botones se ajusten */
+        justify-content: space-between; /* 📌 Distribuir los botones con espacio entre ellos */
+        gap: 5px;
+        width: 100%; /* 📌 Aseguramos que ocupen todo el ancho */
+    }
+
+    /* 📌 Ajustar los botones dentro del navbar */
+    .navbar-links a {
+        font-size: 3.5vw; /* 📌 Ajuste del tamaño de los enlaces */
+        padding: 5px 10px;
+        text-align: center;
+        display: block;
+        width: 45%; /* 📌 Limitar el ancho de cada enlace */
     }
 
     /* 📌 Ajustar el botón "Mi Portafolio" */
     .portfolio-button {
         display: block;
-        margin: 5px auto 15px auto; /* 📌 Lo sube un poco en comparación con los demás */
-        font-size: 14px;
-        padding: 10px 15px;
+        margin: 2vh auto; /* 📌 Ajuste el espaciado de manera automática */
+        font-size: 4vw; /* 📌 Ajuste dinámico del tamaño de la fuente */
+        padding: 2vh 3vw;
+        max-width: 250px; /* 📌 Limita el tamaño máximo del botón */
+        width: 80%; /* 📌 Ocupa el 80% del ancho del contenedor */
+        text-align: center; /* 📌 Centrado del texto */
     }
 }
+
 
