@@ -138,7 +138,7 @@ html, body {
     max-width: 200px; /* Evita que los botones se expandan demasiado */
     margin-bottom: 10px; /* Espacio entre los botones y el logo */
     flex-wrap: nowrap; /* Mantiene una sola línea */
-    margin-left: 100px !important; /* Mueve el navbar un poco a la derecha */
+    margin: 0 auto; /* 🔽 Centra horizontalmente */
   }
 
   /* Estilos para los botones */
@@ -163,7 +163,7 @@ html, body {
     font-size: 1.3rem;
     font-weight: bold;
     margin-top: 20px;
-    margin-left: 40px !important; /* Mueve el navbar un poco a la derecha */
+    margin: 0 auto; /* 🔽 Centra horizontalmente */
   }
 
   /* Cambio de "Certificaciones" a "Certifi" con el mismo tamaño que los otros botones */

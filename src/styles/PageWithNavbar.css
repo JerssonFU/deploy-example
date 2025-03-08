@@ -327,24 +327,32 @@ body::before {
 /* 🔽 Ajustes para pantallas ultra pequeñas */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.2rem;
-    max-width: 280px;
+    font-size: 1.3rem;
+    max-width: 280px !important;
+    margin: 0 auto; /* 🔽 Centra horizontalmente */
+    margin-top: 50%;
+
   }
 
   .hero-subtitle {
     font-size: 1rem;
+    margin: 0 auto; /* 🔽 Centra horizontalmente */
+    margin-bottom: 20px; /* Espacio entre los botones y el logo */
   }
 
   .description {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     max-width: 280px;
     line-height: 1.5;
     max-height: 12rem;
+    margin: 0 auto; /* 🔽 Centra horizontalmente */
+    
   }
 
   .tools-container {
     width: 100%;
     max-width: 350px; /* 🔽 Un poco más grande para pantallas pequeñas */
+    margin: 0 auto; /* 🔽 Centra horizontalmente */
   }
 
   .tools-title {
