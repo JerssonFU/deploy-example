@@ -114,63 +114,68 @@ html, body {
   text-decoration: none; /* Asegura que no aparezca subrayado */
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
-  /* Navbar se mantiene centrado */
+  /* Navbar centrado */
   .navbar {
-    justify-content: center; /* Centra los elementos del navbar */
-    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100%;
+    position: fixed !important;
+    background: rgba(255, 255, 255, 0.6); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Aplica desenfoque al fondo */
+    z-index: 1; /* Mantiene el navbar por debajo de la barra de scroll */
   }
 
-  /* Desaparece el logo en pantallas pequeñas */
-  .logo {
-    display: none; /* El logo no será visible en pantallas pequeñas */
-  }
-
-  /* Navbar derecha con mejor ajuste */
+  /* Contenedor de botones en línea recta y centrado */
   .navbar-right {
     display: flex;
-    gap: 10px;
-    margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
-    margin-left: 0; /* Elimina el margen izquierdo */
-    justify-content: center; /* Alinea los links al centro */
+    justify-content: center; /* Centra los botones */
+    align-items: center !important;
+    gap: 0px; /* Reduce el margen entre botones */
+    width: 100%;
+    max-width: 200px; /* Evita que los botones se expandan demasiado */
+    margin-bottom: 10px; /* Espacio entre los botones y el logo */
+    flex-wrap: nowrap; /* Mantiene una sola línea */
+    margin-left: 100px !important; /* Mueve el navbar un poco a la derecha */
   }
 
-  /* Mostrar hamburguesa (agregar código de hamburguesa en HTML y JS si es necesario) */
+  /* Estilos para los botones */
   .navbar-right a {
-    font-size: 1.2rem; /* Aumenta ligeramente el tamaño de los links */
-  }
-}
-
-/* Línea de subrayado animada */
-.navbar a::after{
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: rgb(101, 229, 255);
-  transition: width 0.3s ease;
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  transform: translateX(-50%);
-}
-
-.navbar a:hover::after, .hero-title:hover::after {
-  width: 100%;
-}
-
-
-@media (max-width: 480px) {
-  /* Ajustes más pequeños para pantallas más pequeñas */
-  .navbar {
-    padding: 15px 20px ; /* Reduce el padding para pantallas más pequeñas */
+    font-size: 1rem !important;
+    text-align: center;
+    padding: 4px 0px;
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    width: auto;
+    min-width: 80px; /* Tamaño mínimo */
+    max-width: 95px !important; /* Tamaño máximo */
   }
 
-  /* Ajusta el tamaño de los links */
-  .navbar-right a {
-    font-size: 1rem; /* Ajusta el tamaño de fuente para pantallas muy pequeñas */
+  /* Logo centrado debajo del navbar */
+  .navbar-left {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 40px !important; /* Mueve el navbar un poco a la derecha */
+  }
+
+  /* Cambio de "Certificaciones" a "Certifi" con el mismo tamaño que los otros botones */
+  .navbar-right a:nth-child(2)::before { 
+    content: "Certifi" !important;  
+    font-size: 1rem !important;  
+    font-weight: 700 !important;  
+    color: inherit;
+  }
+  
+  .navbar-right a:nth-child(2) { 
+    font-size: 0 !important; /* Oculta el texto original */
+    position: relative;
   }
 }
-
-

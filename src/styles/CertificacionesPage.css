@@ -224,53 +224,8 @@
         background-color: #0056b3;
     }
 
-    /* 📌 Centrar los botones del navbar en móviles */
-    .navbar {
-        font-size: 4vw !important; /* 📌 Ajuste dinámico del tamaño de la fuente */
-        padding: 2vw 3vw; /* 📌 Espaciado más compacto */
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* 📌 Centrar los botones */
-        justify-content: center; /* 📌 Centrar el contenido */
-    }
-
-    .navbar a {
-        font-size: 4vw !important; /* 📌 Ajuste dinámico de tamaño de enlace */
-        text-align: center;
-        display: block;
-        width: 100%;
-        margin-bottom: 5px; /* 📌 Espaciado entre los enlaces */
-    }
-
-    /* 📌 Contenedor de los botones */
-    .navbar-links {
-        display: flex;
-        flex-wrap: wrap; /* 📌 Permite que los botones se ajusten */
-        justify-content: space-between; /* 📌 Distribuir los botones con espacio entre ellos */
-        gap: 5px;
-        width: 100%; /* 📌 Aseguramos que ocupen todo el ancho */
-    }
-
-    /* 📌 Ajustar los botones dentro del navbar */
-    .navbar-links a {
-        font-size: 3.5vw; /* 📌 Ajuste del tamaño de los enlaces */
-        padding: 5px 10px;
-        text-align: center;
-        display: block;
-        width: 45%; /* 📌 Limitar el ancho de cada enlace */
-    }
-
-    /* 📌 Ajustar el botón "Mi Portafolio" */
-    .portfolio-button {
-        display: block;
-        margin: 2vh auto; /* 📌 Ajuste el espaciado de manera automática */
-        font-size: 4vw; /* 📌 Ajuste dinámico del tamaño de la fuente */
-        padding: 2vh 3vw;
-        max-width: 250px; /* 📌 Limita el tamaño máximo del botón */
-        width: 80%; /* 📌 Ocupa el 80% del ancho del contenedor */
-        text-align: center; /* 📌 Centrado del texto */
-    }
+    
 }
+
 
 

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/PageWithNavbar.css";
 
+
 function PageWithNavbar() {
   return (
     <div>
