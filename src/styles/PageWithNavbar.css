@@ -259,3 +259,71 @@ body::before {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
+/* Responsive CSS */
+@media (max-width: 768px) {
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px; /* 🔽 Baja todo el grupo */
+  }
+
+  .hero-title,
+  .hero-subtitle,
+  .description,
+  .tools-container { 
+    width: 300px; 
+    text-align: center;
+    margin: 0 auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transform: translateX(-30px);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem !important;
+    line-height: 1.4;
+  }
+
+  .description {
+    font-size: 1.1rem !important;
+    line-height: 1.5;
+  }
+
+  /* 🔽 Reduciendo espacios innecesarios en tools-container */
+  .tools-container {
+    margin-top: -20px; /* Reduce el espacio superior */
+    padding: 5px 0; /* Ajusta el padding vertical */
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Reduce el tamaño de las columnas */
+    gap: 5px; /* Reduce el espacio entre iconos */
+    justify-content: center;
+  }
+
+  .tool-box {
+    width: 80px; /* Reduce el tamaño del contenedor */
+    height: auto;
+    text-align: center;
+    padding: 5px; /* Reduce el padding dentro de cada icono */
+  }
+
+  .tool-img {
+    width: 30px; /* Reduce el tamaño del icono */
+    height: 30px;
+  }
+
+  .tool-info {
+    font-size: 0.7rem; /* Reduce el tamaño del texto debajo de los iconos */
+  }
+}
