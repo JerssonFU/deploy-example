@@ -262,63 +262,54 @@ body::before {
 /* Responsive CSS */
 @media (max-width: 768px) {
   .hero-text {
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* 🔽 Centrado absoluto */
     width: 100%;
-    margin: 0 auto;
-    margin-top: 100px; /* 🔽 Baja todo el grupo */
+    padding-top: 120px; /* 🔽 Evita que quede detrás del navbar */
+    text-align: center;
   }
 
   .hero-title,
   .hero-subtitle,
   .description,
   .tools-container { 
-    width: 70% !important; /* 🔽 Se estira desde el centro en vez de irse a la derecha */
-    max-width: 90vw; /* 🔽 Limita el ancho sin desbordar */
+    width: clamp(250px, 80%, 90vw); /* 🔽 Se adapta sin desproporción */
+    max-width: 90vw;
     text-align: center;
     margin: 0 auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
   }
 
   .hero-title {
     font-size: 2rem;
     white-space: normal;
-    width: 50% !important; /* 🔽 Se estira desde el centro en vez de irse a la derecha */
   }
 
   .hero-subtitle {
     font-size: 1.3rem !important;
-    line-height: 1.1;
-    width: 75% !important; /* 🔽 Se estira desde el centro en vez de irse a la derecha */
-    margin-left: -30px;
+    line-height: 1.2;
   }
 
   .description {
     font-size: 1.1rem !important;
     line-height: 1.5;
-    width: 90%; /* 🔽 Se alinea con el resto sin desbordar */
-    max-width: 90vw !important;
-    margin-top: 20px; /* 🔽 Mantiene la alineación */
-    margin-left: -15px !important;
+    margin-top: 20px;
   }
 
   /* 🔽 Mejor alineación de tools-container */
   .tools-container {
-    margin-top: -10px; /* Ajuste fino */
     padding: 5px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%; /* 🔽 Se mantiene alineado */
-    max-width: 90vw;
+    justify-content: center; /* 🔽 Se mantiene centrado */
+    width: clamp(250px, 80%, 90vw);
   }
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Mejor distribución automática */
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     gap: 8px;
     justify-content: center;
     width: 100%;
