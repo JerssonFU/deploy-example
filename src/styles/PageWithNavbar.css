@@ -262,10 +262,10 @@ body::before {
 /* 🔽 Estilos RESPONSIVOS para pantallas pequeñas */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 1.8rem !important;
-    padding: 0 45px !important;
-    overflow: hidden !important;
-    width: 85% !important;
+    font-size: 2.1rem !important;
+    margin: 0 auto !important; /* 🔽 Centra horizontalmente */
+    margin-top: 50% !important;
+    width: 100% !important;
   }
 
   .hero-subtitle {
@@ -328,9 +328,7 @@ body::before {
 @media (max-width: 480px) {
   .hero-title {
     font-size: 2.1rem !important;
-    max-width: 320px !important;
-    margin: 0 auto; /* 🔽 Centra horizontalmente */
-    margin-top: 50%;
+    margin-top: 50% !important;
 
   }
 
