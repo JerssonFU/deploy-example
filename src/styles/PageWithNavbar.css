@@ -259,76 +259,87 @@ body::before {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
-/* Responsive CSS */
+/* 🔽 Estilos RESPONSIVOS para pantallas pequeñas */
 @media (max-width: 768px) {
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* 🔽 Centrado absoluto */
-    width: 100%;
-    padding-top: 120px; /* 🔽 Evita que quede detrás del navbar */
-    text-align: center;
-  }
-
-  .hero-title,
-  .hero-subtitle,
-  .description,
-  .tools-container { 
-    width: clamp(250px, 80%, 90vw); /* 🔽 Se adapta sin desproporción */
-    max-width: 90vw;
-    text-align: center;
-    margin: 0 auto;
-  }
-
   .hero-title {
-    font-size: 2rem;
-    white-space: normal;
+    font-size: 1.5rem;
+    width: 85%; /* 🔽 Mismo ancho que la descripción */
+    max-width: 320px;
+    white-space: nowrap; /* 🔽 Mantiene una sola línea */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 🔽 Agrega "..." si el texto se corta */
+    text-align: center !important;
   }
 
   .hero-subtitle {
-    font-size: 1.3rem !important;
-    line-height: 1.2;
+    font-size: 1.2rem;
   }
 
   .description {
-    font-size: 1.1rem !important;
-    line-height: 1.5;
-    margin-top: 20px;
+    font-size: 0.75rem !important;  
+    padding: 0 15px;
+    width: 85%; 
+    max-width: 320px;
+    line-height: 1.4;
+    max-height: 11.2rem; 
+    overflow: hidden;
+    text-align: justify; 
   }
 
-  /* 🔽 Mejor alineación de tools-container */
-  .tools-container {
-    padding: 5px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* 🔽 Se mantiene centrado */
-    width: clamp(250px, 80%, 90vw);
+  .tools-title {
+    font-size: 1.5rem;
   }
 
   .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 8px;
-    justify-content: center;
-    width: 100%;
-    max-width: 90vw;
+    gap: 10px;
   }
 
   .tool-box {
-    width: 70px;
-    height: auto;
-    text-align: center;
-    padding: 5px;
+    width: 60px;
   }
 
   .tool-img {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
 
   .tool-info {
     font-size: 0.7rem;
+  }
+}
+
+/* 🔽 Ajustes para pantallas ultra pequeñas */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.2rem;
+    max-width: 280px; /* 🔽 Ajuste fino para pantallas menores */
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.7rem;
+    max-width: 280px; 
+    line-height: 1.5; 
+    max-height: 12rem; 
+  }
+
+  .tools-title {
+    font-size: 1.2rem;
+  }
+
+  .tool-box {
+    width: 50px;
+  }
+
+  .tool-img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .tool-info {
+    font-size: 0.6rem;
   }
 }
