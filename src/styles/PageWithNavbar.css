@@ -286,11 +286,14 @@ body::before {
   .hero-title {
     font-size: 2rem;
     white-space: normal;
+    width: 50% !important; /* 🔽 Se estira desde el centro en vez de irse a la derecha */
   }
 
   .hero-subtitle {
     font-size: 1.3rem !important;
-    line-height: 1.4;
+    line-height: 1.1;
+    width: 75% !important; /* 🔽 Se estira desde el centro en vez de irse a la derecha */
+    margin-left: -30px;
   }
 
   .description {
@@ -299,6 +302,7 @@ body::before {
     width: 90%; /* 🔽 Se alinea con el resto sin desbordar */
     max-width: 90vw !important;
     margin-top: 20px; /* 🔽 Mantiene la alineación */
+    margin-left: -15px !important;
   }
 
   /* 🔽 Mejor alineación de tools-container */
