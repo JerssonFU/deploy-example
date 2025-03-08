@@ -181,7 +181,7 @@
     .certificaciones-grid {
         grid-template-columns: 1fr; /* 📌 1 columna en móviles */
         width: 90%;
-        margin-top: 50vh; /* 📌 Baja los cuadros para que no tapen el navbar */
+        margin-top: 45vh; /* 📌 Baja los cuadros para que no tapen el navbar */
         display: flex;
         flex-direction: column;
         align-items: center;
