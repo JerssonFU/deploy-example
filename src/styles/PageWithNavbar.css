@@ -327,15 +327,15 @@ body::before {
 /* 🔽 Ajustes para pantallas ultra pequeñas */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.3rem;
-    max-width: 280px !important;
+    font-size: 2.1rem !important;
+    max-width: 320px !important;
     margin: 0 auto; /* 🔽 Centra horizontalmente */
     margin-top: 50%;
 
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.5rem !important;
     margin: 0 auto; /* 🔽 Centra horizontalmente */
     margin-bottom: 20px; /* Espacio entre los botones y el logo */
   }
