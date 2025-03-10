@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../styles/PowerBiPage.css";
 
-const dash1 = "/assets/dash1.png"; // Ruta absoluta desde public/
+
+const dash1 = "./assets/dash1.png"; // Ruta absoluta desde public/
 
 const items = [
   { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
@@ -44,11 +45,12 @@ function PowerBIPage() {
         </div>
       </div>
 
+      {/* 📌 Modal centrado con iframe */}
       {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <button className="close-button" onClick={handleCloseModal}>X</button>
-            <iframe src={activeLink} title="Contenido visualizado" width="100%" height="100%" style={{ border: "none" }}></iframe>
+        <div className="modal-v2">
+          <div className="modal-content-v2">
+            <button className="close-btn-v2" onClick={handleCloseModal}>&times;</button>
+            <iframe src={activeLink} className="iframe-viewer"></iframe>
           </div>
         </div>
       )}
