@@ -37,39 +37,44 @@
 /* 📌 Cuadrícula de certificaciones */
 .certificaciones-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 📌 3 columnas */
-    gap: 20px; /* 📌 Mantiene la misma separación entre cuadros */
-    max-width: 1400px;
-    
-    /* 📌 Mantiene la misma posición */
+    grid-template-columns: repeat(3, 1fr); /* Mantiene 3 columnas */
+    gap: 20px; /* Reduce el espacio entre elementos */
+    max-width: 1200px; /* Mantiene el tamaño sin afectar otros elementos */
     position: absolute;
-    top: 90%;
+    top: 85%; /* Mantiene la posición */
     left: 50%;
     transform: translate(-50%, -50%);
-    
-    padding: 20px !important;
+    padding: 15px;
     justify-content: center;
+    transform-origin: center;
+    
+}
+
+/* 🔹 Factor de escala global */
+:root {
+    --scale-factor: 0.9; /* 🔥 Ajusta este valor para reducir el tamaño sin perder estructura */
 }
 
 /* 📌 Estilos de los cuadros (Aumenta tamaño sin cambiar posición) */
 .cert-item {
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 20px;
+    padding: calc(20px * var(--scale-factor)); /* 🔥 Reduce proporcionalmente */
     text-align: center;
-    width: 510px; /* 📌 Más ancho */
-    height: 400px; /* 📌 Más alto */
+    width: calc(510px * var(--scale-factor)); /* 🔥 Se ajusta con la escala */
+    height: calc(400px * var(--scale-factor));
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 /* 📌 Imágenes dentro de los cuadros */
 .cert-img {
-    width: 500px; /* 📌 Más ancho */
-    height: 320px; /* 📌 Más alto */
+    width: calc(500px * var(--scale-factor));
+    height: calc(320px * var(--scale-factor));
     object-fit: cover;
     border-radius: 0px;
 }
@@ -89,13 +94,13 @@
 
 /* 📌 Botón dentro del cuadro */
 .cert-button {
-    width: 40%;
-    padding: 14px;
-    font-size: 17px;
+    width: calc(40% * var(--scale-factor));
+    padding: calc(14px * var(--scale-factor));
+    font-size: calc(17px * var(--scale-factor));
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 9px;
+    border-radius: calc(9px * var(--scale-factor));
     cursor: pointer;
     transition: background-color 0.3s;
 }
