@@ -280,7 +280,7 @@ body::before {
     max-height: calc(1.6rem * 2 * 1.4);
   }
 
-  .description {
+  .descriptionv2 {
     font-size: 0.75rem !important;
     padding: 0 15px;
     width: 85% !important;

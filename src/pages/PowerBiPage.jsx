@@ -3,14 +3,15 @@ import "../styles/PowerBiPage.css";
 
 
 const dash1 = "./assets/dash1.png"; // Ruta absoluta desde public/
+const dash2 = "./assets/dash2.png";
 
 const items = [
-  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
-  { image: dash1, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash2, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash2, link: "https://app.powerbi.com/view?r=eyJrIjoiNTM2NjBjOWUtODgxMS00YmQ5LWFlNjYtZTUzMmIyYWFiMDg3IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash2, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash2, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash2, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
+  { image: dash2, link: "https://app.powerbi.com/view?r=eyJrIjoiNzAwNThjNzUtZDllNS00MTBlLWI3YTItZDU2MTk0ODI1NzMwIiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" },
 ];
 
 function PowerBIPage() {
@@ -32,7 +33,7 @@ function PowerBIPage() {
       <div className="background-container"></div>
       <div className="content-container">
         <h1 className="title">PROYECTOS DE POWER BI</h1>
-        <p className="description">Reportes, Dashboards, funciones DAX, Análisis</p>
+        <p className="descriptionv2">Reportes, Dashboards, funciones DAX, Análisis</p>
         <div className="grid-container">
           {items.map((item, index) => (
             <div key={index} className="text-box">
