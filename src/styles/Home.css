@@ -17,7 +17,7 @@ body {
   align-items: center;     /* Centrado horizontal */
   height: 100vh;           /* Altura total de la ventana */
   width: 100vw;            /* Ancho total de la ventana */
-  background-image: url('public/assets/bg.jpg'); /* Imagen de fondo */
+  background-image: url('/public/assets/bg.jpg'); /* Imagen de fondo */
   background-size: cover;  /* La imagen cubre todo el fondo */
   background-position: center;
   background-repeat: no-repeat;
