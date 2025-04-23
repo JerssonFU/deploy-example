@@ -1,36 +1,32 @@
-
-
 /* Reset y fuente base */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-image: url('/assets/back2.jpg');  /* Fondo de imagen */
-  background-size: cover;  /* Asegura que la imagen ocupe todo el fondo */
-  background-position: center 10%;  /* Centra la imagen horizontalmente y la desplaza hacia abajo */
-  background-attachment: fixed;  /* Hace que el fondo no se mueva al hacer scroll */
-  height: 100%; /* Asegura que el body ocupe toda la pantalla */
+  background-image: url('/assets/back2.jpg');
+  background-size: cover;
+  background-position: center 10%;
+  background-attachment: fixed;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;  /* Alinea el contenido desde la parte superior (debido al navbar fijo) */
+  justify-content: flex-start;
 }
-
-
 
 /* Contenedor principal */
 .main-content {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  padding: 40px; /* Espacio adicional a los laterales */
-  max-width: 2200px; /* Limita el ancho máximo */
-  width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  max-width: 2200px;
+  width: 100%;
   box-sizing: border-box;
-  text-align: center; /* Centra el texto dentro de los contenedores */
-  min-height: calc(90vh - 60px); /* Hace que ocupe toda la altura visible de la pantalla menos la altura del navbar */
-  height: auto; /* El contenedor se ajusta a su contenido */
-  margin: 0 auto; /* Centra el contenido horizontalmente */
+  text-align: center;
+  min-height: calc(90vh - 60px);
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Hero */
@@ -39,27 +35,23 @@ body, html {
   padding: 0 20px;
 }
 
-/* Hero Title */
 .hero-title {
   font-size: 4.8rem;
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 32px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra al texto */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-
-/* Descripción */
 .description {
   font-size: 1.3rem;
   line-height: 1.7;
   color: #f2f2f2;
   margin-bottom: 10px;
-  text-align: center; /* Justifica el texto */
-  font-family: 'Roboto', sans-serif; /* Fuente más profesional */
-  font-weight: 300; /* Peso más ligero */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
-
 
 /* Herramientas */
 .tools-container {
@@ -86,11 +78,11 @@ body, html {
   flex-direction: column;
   align-items: center;
   width: 100px;
-  height: 100px; /* Altura fija para que todos sean iguales */
+  height: 100px;
   padding: 10px;
   background: transparent;
-  border: none;            /* Sin borde */
-  box-shadow: none;        /* Sin sombra */
+  border: none;
+  box-shadow: none;
   transition: transform 0.3s;
 }
 
@@ -103,11 +95,69 @@ body, html {
   height: 60%;
   object-fit: contain;
   display: block;
-  transform: scale(1); /* Escala por defecto */
+  transform: scale(1);
 }
 
-/* Escala extra para íconos más pequeños */
 .tool-img[src*="excel.png"],
 .tool-img[src*="powerbi.png"] {
-  transform: scale(1.5); /* Ajusta este valor según se necesite */
+  transform: scale(1.5);
+}
+
+/* ─────── Media Queries para Responsividad ─────── */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .tools-title {
+    font-size: 1.8rem;
+  }
+
+  .tool-box {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .tools-title {
+    font-size: 1.6rem;
+  }
+
+  .tool-box {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .tools-title {
+    font-size: 1.4rem;
+  }
+
+  .tool-box {
+    width: 60px;
+    height: 60px;
+  }
 }
