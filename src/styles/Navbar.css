@@ -1,181 +1,45 @@
-/* Establece que el contenido no se desborde */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden; /* Elimina el scroll horizontal */
-}
-
-/* Navbar con contorno opaco tipo cataratas */
+/* Estilo general del navbar */
 .navbar {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: transparent; /* Mantiene el fondo del navbar transparente */
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center !important; /* Centra verticalmente los elementos */
-  padding: 20px 20px;
-  height: 80px; /* Asegura una altura mayor del navbar */
-  z-index: 1000; /* Asegura que el navbar esté sobre el contenido */
-  transition: none; /* Sin transiciones para mantenerlo transparente */
-  animation: fadeIn 0.7s ease-out forwards, slideDown 0.7s ease-out forwards; 
-  backdrop-filter: blur(5px); /* Aplica un desenfoque tipo cataratas al fondo */
-  background-color: rgba(176, 176, 176, 0.1); /* Añade un fondo ligeramente opaco */
-}
-
-
-/* Animación de desvanecimiento y desplazamiento */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-15px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* Animación para todos los elementos al mismo tiempo */
-.navbar-left, .navbar-right, .logo {
-  opacity: 0; /* Inicialmente invisibles */
-  transform: translateY(-10px);
-  animation: fadeIn 0.7s ease-out forwards, slideDown 0.7s ease-out forwards;
-}
-
-/* Logo animado con efecto 3D y dorado */
-.logo {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 1.6rem !important;
-  font-weight: 900; /* Más grosor */
-  color: gold; /* Color dorado */
-  text-decoration: none;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6), 0px 0px 5px rgba(255, 223, 0, 0.8); /* Efecto 3D */
-  position: relative; /* Necesario para la línea deslizante */
-  margin-left: 80px; /* Ajusta este valor según cuánto quieras moverlo */
-}
-
-
-.logo::after {
-  content: "";
-  position: absolute;
-  bottom: -5px; /* Espacio debajo del texto */
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: rgb(245, 245, 245); /* Color dorado */
-  transition: width 0.3s ease-in-out;
-}
-
-.logo:hover {
-  color: #69cdff; /* Azul al pasar el mouse */
-  text-decoration: none; /* Asegura que no aparezca subrayado */
-}
-
-/* Navbar derecha con letras doradas y efecto 3D */
-.navbar-right {
-  display: flex;
-  gap: 15px;
-  margin-right: 100px;
-}
-
-.navbar-right a {
-  font-size: 1.4rem !important;
-  font-weight: 700; /* Más grosor */
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6), 0px 0px 5px rgba(255, 223, 0, 0.8); /* Efecto 3D */
-  position: relative; /* Necesario para la línea deslizante */
-}
-
-.navbar-right a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px; /* Espacio debajo del texto */
-  left: 0;
-  width: 0;
-  height: 2px;
-  transition: width 0.3s ease-in-out;
-}
-
-.navbar-right a:hover {
-  color: #69cdff; /* Azul al pasar el mouse */
-  text-decoration: none; /* Asegura que no aparezca subrayado */
-}
-
-@media (max-width: 768px) {
-  /* Navbar centrado */
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;
-    justify-content: center !important;
+    position: fixed;
+    top: 0;
     width: 100%;
-    position: fixed !important;
-    background: rgba(255, 255, 255, 0.6); /* Fondo semitransparente */
-    backdrop-filter: blur(10px); /* Aplica desenfoque al fondo */
-    z-index: 1; /* Mantiene el navbar por debajo de la barra de scroll */
-  }
-
-  /* Contenedor de botones en línea recta y centrado */
-  .navbar-right {
-    display: flex;
-    justify-content: center; /* Centra los botones */
-    align-items: center !important;
-    gap: 0px; /* Reduce el margen entre botones */
-    width: 100%;
-    max-width: 200px; /* Evita que los botones se expandan demasiado */
-    margin-bottom: 10px; /* Espacio entre los botones y el logo */
-    flex-wrap: nowrap; /* Mantiene una sola línea */
-    margin: 0 auto; /* 🔽 Centra horizontalmente */
-  }
-
-  /* Estilos para los botones */
-  .navbar-right a {
-    font-size: 1rem !important;
-    text-align: center;
-    padding: 4px 0px;
-    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
-    width: auto;
-    min-width: 80px; /* Tamaño mínimo */
-    max-width: 95px !important; /* Tamaño máximo */
-  }
-
-  /* Logo centrado debajo del navbar */
-  .navbar-left {
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: center;
-    width: 100%;
-  }
-
-  .logo {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-top: 20px;
-    margin: 0 auto; /* 🔽 Centra horizontalmente */
-  }
-
-  /* Cambio de "Certificaciones" a "Certifi" con el mismo tamaño que los otros botones */
-  .navbar-right a:nth-child(2)::before { 
-    content: "Certifi" !important;  
-    font-size: 1rem !important;  
-    font-weight: 700 !important;  
-    color: inherit;
+    padding: 5px 0;
   }
   
-  .navbar-right a:nth-child(2) { 
-    font-size: 0 !important; /* Oculta el texto original */
-    position: relative;
+  /* Contenedor para los enlaces */
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 2200px; /* Ajusta este valor según tus necesidades */
+    width: 100%;
   }
-}
+  
+  /* Estilos para cada enlace */
+  .navbar-container a {
+    color: white;
+    font-size: 0.9rem !important;
+    font-weight: 550 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 12px;
+    margin: 0;
+    letter-spacing: 0.2px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover y activo */
+  .navbar-container a:hover {
+    color: #ffa500;
+  }
+  
+  .navbar-container a.active {
+    color: #ff6600;
+  }
+  

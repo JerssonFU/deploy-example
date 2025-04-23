@@ -1,18 +1,16 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        <Link to="/" className="logo">Mi Portafolio</Link>
-      </div>
-      <div className="navbar-right">
-        <Link to="/Inicio">Inicio</Link>  {/* Antes era "Inicio" */}
-        <Link to="/Certificaciones">Certificaciones</Link>
-        <Link to="/PowerBI">Power BI</Link>
-        <Link to="/SqlServer">SMSS</Link>
-        <Link to="/Python">Python</Link>
+      <div className="navbar-container">
+        <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Mi portafolio</NavLink>
+        <NavLink to="/Inicio" className={({ isActive }) => isActive ? "active" : ""}>Inicio</NavLink>
+        <NavLink to="/Certificaciones" className={({ isActive }) => isActive ? "active" : ""}>Certificaciones</NavLink>
+        <NavLink to="/PowerBI" className={({ isActive }) => isActive ? "active" : ""}>PowerBI</NavLink>
+        <NavLink to="/SMSS" className={({ isActive }) => isActive ? "active" : ""}>SMSS</NavLink>
+        <NavLink to="/Python" className={({ isActive }) => isActive ? "active" : ""}>Python</NavLink>
       </div>
     </nav>
   );

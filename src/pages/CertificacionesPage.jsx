@@ -4,16 +4,18 @@ import "../styles/CertificacionesPage.css";
 // Se mantiene la estructura original, pero con rutas accesibles
 import cert1 from "/assets/cert1.png";
 import cert2 from "/assets/cert2.png";
-import cert3 from "/assets/cert3.png";
+import cert3 from "/assets/cert5.png";
 import cert4 from "/assets/cert4.png";
+import cert5 from "/assets/cert3.png";
+
 
 const baseURL = "/deploy-example"; // Cambia esto según el repositorio
 const certificaciones = [
   { image: cert1, link: `${baseURL}/pdf/Cert1.pdf` },
   { image: cert2, link: `${baseURL}/pdf/Cert2.pdf` },
-  { image: cert3, link: `${baseURL}/pdf/Cert3.pdf` },
-  { image: cert4, link: `${baseURL}/pdf/Cert4.pdf` },
-  { image: cert1, link: `${baseURL}/pdf/Cert1.pdf` },
+  { image: cert3, link: `${baseURL}/pdf/Cert5.pdf` },
+  { image: cert4, link: `${baseURL}/pdf/Cert3.pdf` },
+  { image: cert5, link: `${baseURL}/pdf/Cert4.pdf` },
   { image: cert1, link: `${baseURL}/pdf/Cert1.pdf` }
 ];
 
