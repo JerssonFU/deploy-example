@@ -1,3 +1,5 @@
+
+
 /* Reset y fuente base */
 body, html {
   margin: 0;
@@ -5,24 +7,14 @@ body, html {
   font-family: 'Poppins', sans-serif;
   background-image: url('/assets/back2.jpg');  /* Fondo de imagen */
   background-size: cover;  /* Asegura que la imagen ocupe todo el fondo */
-  background-position: center;  /* Centra la imagen */
+  background-position: center 10%;  /* Centra la imagen horizontalmente y la desplaza hacia abajo */
   background-attachment: fixed;  /* Hace que el fondo no se mueva al hacer scroll */
   height: 100%; /* Asegura que el body ocupe toda la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;  /* Alinea el contenido desde la parte superior (debido al navbar fijo) */
 }
 
-/* Navbar fijo */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;  /* Navbar transparente */
-  padding: 10px 20px;
-  z-index: 1000;  /* Asegura que el navbar quede encima del contenido */
-  border: none;  /* Elimina cualquier borde */
-  box-shadow: none;  /* Elimina cualquier sombra */
-  backdrop-filter: none; /* Elimina cualquier filtro de desenfoque (blur) */
-}
 
 
 /* Contenedor principal */
@@ -31,44 +23,43 @@ body, html {
   flex-direction: column;
   align-items: center;  /* Centra los elementos horizontalmente */
   justify-content: center; /* Centra verticalmente */
-  padding: 20px; /* Espacio adicional para margen */
-  max-width: 1200px; /* Limita el ancho máximo */
+  padding: 40px; /* Espacio adicional a los laterales */
+  max-width: 2200px; /* Limita el ancho máximo */
   width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
   box-sizing: border-box;
   text-align: center; /* Centra el texto dentro de los contenedores */
-  margin: 0 auto; /* Centra el contenido dentro de su contenedor */
-  min-height: calc(100vh - 120px); /* Asegura que el contenedor ocupe toda la altura de la pantalla menos el navbar */
-  height: 100%; /* Asegura que el contenido se expanda para llenar todo el espacio vertical */
-  margin-left: 40%; /* Desplaza el contenedor hacia la derecha (ajustable según sea necesario) */
+  min-height: calc(90vh - 60px); /* Hace que ocupe toda la altura visible de la pantalla menos la altura del navbar */
+  height: auto; /* El contenedor se ajusta a su contenido */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
 }
-
-
 
 /* Hero */
 .hero-container {
-  max-width: 800px;
+  max-width: 1200px;
   padding: 0 20px;
 }
 
+/* Hero Title */
 .hero-title {
-  font-size: 4rem;
+  font-size: 4.8rem;
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra al texto */
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: #229ed9;
-  margin-bottom: 20px;
-}
 
+/* Descripción */
 .description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 40px;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #f2f2f2;
+  margin-bottom: 10px;
+  text-align: center; /* Justifica el texto */
+  font-family: 'Roboto', sans-serif; /* Fuente más profesional */
+  font-weight: 300; /* Peso más ligero */
 }
+
 
 /* Herramientas */
 .tools-container {
@@ -79,7 +70,7 @@ body, html {
 .tools-title {
   font-size: 2rem;
   font-weight: 600;
-  color: #222;
+  color: #83d2ff;
   margin-bottom: 20px;
 }
 
@@ -95,10 +86,11 @@ body, html {
   flex-direction: column;
   align-items: center;
   width: 100px;
+  height: 100px; /* Altura fija para que todos sean iguales */
   padding: 10px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: transparent;
+  border: none;            /* Sin borde */
+  box-shadow: none;        /* Sin sombra */
   transition: transform 0.3s;
 }
 
@@ -107,14 +99,15 @@ body, html {
 }
 
 .tool-img {
-  width: 50px;
-  height: 50px;
+  width: 60%;
+  height: 60%;
   object-fit: contain;
-  margin-bottom: 8px;
+  display: block;
+  transform: scale(1); /* Escala por defecto */
 }
 
-.tool-info {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #333;
+/* Escala extra para íconos más pequeños */
+.tool-img[src*="excel.png"],
+.tool-img[src*="powerbi.png"] {
+  transform: scale(1.5); /* Ajusta este valor según se necesite */
 }
