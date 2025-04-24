@@ -30,7 +30,7 @@ function PowerBIPage() {
 
   return (
     <div className="powerbi-page-container">
-      <div className="background-container"></div>
+      <div className="page-background"></div>
       <div className="content-container">
         <h1 className="title">PROYECTOS DE POWER BI</h1>
         <p className="descriptionv2">Reportes, Dashboards, funciones DAX, Análisis</p>

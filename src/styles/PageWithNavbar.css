@@ -1,24 +1,35 @@
+/* Asegura que el body ocupe toda la altura de la ventana */
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+  height: 100%; 
 }
 
+/* Fondo no fijo para la imagen */
 body {
-  /* Fondo no fijo */
-  background-image: url('/assets/back2.jpg');
-  background-size: cover;         /* Asegura que la imagen cubra todo el fondo */
-  background-position: center 5% !important; /* Centra la imagen en el fondo */
-  background-repeat: no-repeat !important;    /* Evita que la imagen se repita */
-  background-color: transparent !important;  /* Fondo transparente debajo de la imagen */
-
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative; /* Necesario para aplicar pseudo-elementos correctamente */
+  background-color: transparent; /* Fondo transparente debajo de la imagen */
+}
 
-  background-attachment: fixed !important;   /* La imagen se queda fija mientras el contenido se mueve */
+/* Pseudo-elemento ::before para aplicar el filtro de blur al fondo */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/back2.jpg');
+  background-size: cover;
+  background-position: center 5%; /* Centra la imagen */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1; /* Asegura que el fondo esté detrás del contenido */
 }
 
 
@@ -136,8 +147,13 @@ body {
 
   /* Agregar funcionalidad para empujar el contenido cuando el menú hamburguesa esté abierto */
   .hamburger-menu.open + .main-content {
-    margin-top: 200px; /* Empuja hacia abajo el contenido */
+    margin-top: 200px; 
     transition: margin-top 0.3s ease-in-out;
+  }
+
+  /* Aplicar el blur solo en pantallas menores a 1024px */
+  body::before {
+    filter: blur(8px); /* Aplica un desenfoque más fuerte */
   }
 }
 
@@ -162,8 +178,13 @@ body {
 
   /* Agregar funcionalidad para empujar el contenido cuando el menú hamburguesa esté abierto */
   .hamburger-menu.open + .main-content {
-    margin-top: 200px !important; /* Empuja hacia abajo el contenido */
+    margin-top: 200px !important;
     transition: margin-top 0.3s ease-in-out;
+  }
+
+  /* Aplicar el blur solo en pantallas menores a 768px */
+  body::before {
+    filter: blur(4px) !important; /* Aplica un desenfoque más fuerte para pantallas más pequeñas */
   }
 }
 
@@ -187,6 +208,11 @@ body {
 
   /* Agregar funcionalidad para empujar el contenido cuando el menú hamburguesa esté abierto */
   .hamburger-menu.open + .main-content {
-    margin-top: 60px; /* Empuja hacia abajo el contenido */
+    margin-top: 60px;
+  }
+
+  /* Aplicar el blur solo en pantallas menores a 480px */
+  body::before {
+    filter: blur(12px); /* Aplica el máximo desenfoque para pantallas pequeñas */
   }
 }

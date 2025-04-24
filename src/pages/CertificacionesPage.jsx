@@ -32,7 +32,7 @@ function CertificacionesPage() {
   };
 
   return (
-    <div className="certificaciones-page-background">
+    <div className="page-background">
       <div className="certificaciones-container main-content">
         <div className="background-container"></div>
         <h1 className="certificaciones-title">CERTIFICACIONES</h1>
