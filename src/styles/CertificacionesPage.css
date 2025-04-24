@@ -1,13 +1,37 @@
-
-/* Asegura que el contenedor de certificaciones ocupe toda la pantalla */
-.certificaciones-container {
-    z-index: 1; /* Establece el contenido sobre el fondo */
-    padding: 20px;
-    min-height: 100vh; /* Asegura que el contenido ocupe toda la altura de la pantalla */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Wallpaper-Certificaciones {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('/assets/back2.jpg'); /* Cambia por tu ruta real */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
+
+/* (Opcional) Blur overlay si lo deseas */
+.Wallpaper-Certificaciones::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px); /* o usa filter: blur(4px) si lo prefieres */
+  z-index: 0;
+}
+
+/* Asegura que el contenido esté encima del fondo */
+.certificaciones-container {
+  overflow: auto; /* Permite scroll */
+  position: relative;
+  z-index: 1;
+}
+
 
 
 /* 📌 Contenedor principal */

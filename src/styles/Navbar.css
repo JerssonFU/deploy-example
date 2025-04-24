@@ -1,37 +1,35 @@
-/* 🌐 Navbar general */
 .navbar {
-    width: 100%;
-    padding: 10px 20px;
-    background: transparent;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    box-sizing: border-box;
-  }
-  
-  /* ✅ Enlaces en modo escritorio */
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    transition: all 0.3s ease;
-  }
-  
-  .navbar-container a {
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 550;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0 12px;
-    margin: 6px 0;
-    letter-spacing: 0.2px;
-    transition: color 0.3s ease;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;           /* Siempre ocupará todo el ancho */
+  height: 60px;           /* O el valor que tú tengas */
+  display: flex;
+  justify-content: center;  /* Centra el contenido */
+  align-items: center;
+  background: transparent;
+  z-index: 9999; /* muy alto para que esté encima de todo */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* BOTÓN HAMBURGUESA */
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar-container a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
   
   .navbar-container a:hover {
     color: #ffa500;
@@ -46,21 +44,78 @@
     display: none;
   }
   
-/* ✅ RESPONSIVE para móviles */
+  /* ─────── Media Queries para Responsividad ─────── */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .tools-title {
+    font-size: 1.8rem;
+  }
+
+  .tool-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hamburger-menu.open + .main-content {
+    margin-top: 200px;
+    transition: margin-top 0.3s ease-in-out;
+  }
+
+  body::before {
+    filter: blur(8px);
+  }
+}
+
 @media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .tools-title {
+    font-size: 1.6rem;
+  }
+
+  .tool-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .hamburger-menu.open + .main-content {
+    margin-top: 200px !important;
+    transition: margin-top 0.3s ease-in-out;
+  }
+
+  body::before {
+    filter: blur(4px) !important;
+  }
+
+  /* ✅ Ajustes del navbar responsive */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    height: auto;
+    padding: 10px 20px;
+    background-color: transparent;
   }
 
   .navbar-toggle {
     display: flex;
     flex-direction: column;
+    align-self: flex-end;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 2000;
+    margin-bottom: 10px;
   }
 
   .navbar-toggle span {
@@ -72,21 +127,60 @@
   }
 
   .navbar-container {
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: transparent !important; /* Menú transparente */
+    padding: 4px 20px; /* ⬅️ Reducido para que los links estén más arriba */
     display: none;
+    gap: 6px;
   }
 
   .navbar-container.open {
     display: flex;
   }
 
-  /* Empujar el contenido cuando el menú hamburguesa se abre */
-  .navbar.open + .main-content {
-    margin-top: -50px; /* Ajusta según la altura del menú desplegado */
-    transition: margin-top 0.3s ease-in-out;
+  .navbar-container a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 550;
+    padding: 6px 0;
+    margin-top: 2px;
+    width: 100%;
   }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .tools-title {
+    font-size: 1.4rem;
+  }
+
+  .tool-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hamburger-menu.open + .main-content {
+    margin-top: 60px;
+  }
+
+  body::before {
+    filter: blur(12px);
+  }
+}
+
+/* ✅ Empujar el contenido cuando navbar está abierto (en cualquier resolución) */
+.navbar.open + .main-content,
+.navbar.open + * .main-content,
+.navbar.open + * .certificaciones-container {
+  margin-top: 300px; /* Ajustado para links más arriba */
+  transition: margin-top 0.3s ease-in-out;
 }

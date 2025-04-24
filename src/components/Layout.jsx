@@ -4,13 +4,14 @@ import "../styles/Navbar.css";
 
 function Layout() {
   return (
-    <div>
-      <Navbar /> {/* El Navbar estará presente en todas las páginas */}
-      <div className="main-content">
-        <Outlet /> {/* Aquí se cargará el contenido de la ruta actual */}
-      </div>
-    </div>
+    <>
+      <Navbar />
+      <main className="main-content">
+        <Outlet />
+      </main>
+    </>
   );
 }
+
 
 export default Layout;
