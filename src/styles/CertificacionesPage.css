@@ -1,3 +1,5 @@
+
+
 /* 📌 Contenedor principal */
 .certificaciones-container {
     display: flex;
@@ -79,19 +81,6 @@
     border-radius: 0px;
 }
 
-/* 📌 Contenedor del fondo */
-.certificaciones-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("/assets/cerebro.jpg") no-repeat center center;
-    background-size: cover;
-    z-index: -1 !important; /* Se coloca detrás del contenido */
-    filter: blur(8px) !important;
-}
-
 /* 📌 Botón dentro del cuadro */
 .cert-button {
     width: calc(40% * var(--scale-factor));
@@ -109,19 +98,6 @@
     background-color: #0056b3;
 }
 
-/* 📌 MODAL */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    z-index: 1000;
-}
 
 .modal-content {
     background: white;
@@ -169,67 +145,93 @@
     transform: scale(1.1);
 }
 
-/* 📌 RESPONSIVE SOLO PARA DISPOSITIVOS MÓVILES */
+/* ✅ RESPONSIVE centrado y estructurado para móviles */
 @media (max-width: 768px) {
+    .certificaciones-container {
+      padding: 100px 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
     .certificaciones-title {
-        font-size: 6vw; /* 📌 Ajuste dinámico según el tamaño de la pantalla */
-        margin-top: 0vh; /* 📌 Espaciado dinámico */
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      white-space: normal;
+      position: static;
+      transform: none;
     }
-
+  
     .certificaciones-subtitle {
-        font-size: 4vw; /* 📌 Ajuste dinámico según el tamaño de la pantalla */
-        margin-top: -2vh; /* 📌 Espaciado dinámico */
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 0 10px;
+      white-space: normal;
+      position: static;
+      transform: none;
     }
-
-    /* 📌 Ajuste para que el primer cuadro inicie desde el centro */
+  
     .certificaciones-grid {
-        grid-template-columns: 1fr; /* 📌 1 columna en móviles */
-        width: 90%;
-        margin-top: 45vh; /* 📌 Baja los cuadros para que no tapen el navbar */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 10px;
+      padding: 0;
+      justify-items: center;
+      position: static;
+      transform: none;
     }
-
+  
     .cert-item {
-        width: 90%;
-        height: auto; /* 📌 Ajuste automático de altura según contenido */
+        width: 100%;
+        max-width: 280px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 15px 25px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 4vw;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .cert-img {
+        gap: 6px;
+      
+        /* 🔥 ALTO MÁXIMO DEFINIDO 🔥 */
+        max-height: 240px;         /* limite visual del cuadro */
+        overflow: hidden;          /* evita que contenido se salga */
+      }
+      
+      
+      
+      .cert-img {
         width: 100%;
-        height: auto; /* 📌 Permite que la imagen se adapte al cuadro */
-        max-height: 200px; /* 📌 Máximo alto para que no desborde */
+        height: auto;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 6px;
+        margin-bottom: 0; /* Asegura que no hay espacio adicional */
+      }
+      
+      .cert-button {
+        width: 60%;
+        padding: 10px;
+        font-size: 1rem;
+      }
+      
+  
+    .modal-content {
+      width: 95vw;
+      height: 85vh;
     }
-
-    .cert-button {
-        width: 80%;
-        font-size: 3.5vw; /* 📌 Ajuste dinámico según el tamaño de la pantalla */
-        margin-top: 2vh; /* 📌 Espaciado entre imagen y botón */
-        padding: 2vw;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+  
+    .close-btn {
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
     }
-
-    .cert-button:hover {
-        background-color: #0056b3;
-    }
-
-    
-}
-
-
-
+  }
+  
+  

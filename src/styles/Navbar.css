@@ -1,3 +1,4 @@
+/* 🌐 Navbar general */
 .navbar {
     width: 100%;
     padding: 10px 20px;
@@ -10,14 +11,13 @@
     box-sizing: border-box;
   }
   
-  /* Contenedor enlaces */
+  /* ✅ Enlaces en modo escritorio */
   .navbar-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 20px;
     transition: all 0.3s ease;
   }
   
@@ -41,14 +41,28 @@
     color: #ff6600;
   }
   
-  /* Botón hamburguesa */
+  /* ❌ Botón hamburguesa oculto en escritorio */
   .navbar-toggle {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-    z-index: 2000;
   }
   
+/* ✅ RESPONSIVE para móviles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 2000;
+  }
+
   .navbar-toggle span {
     height: 3px;
     width: 25px;
@@ -56,37 +70,23 @@
     margin: 4px 0;
     border-radius: 2px;
   }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .navbar-toggle {
-      display: flex;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-    }
-  
-    .navbar-container {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      padding: 10px 20px;
-      background-color: rgba(0, 0, 0, 0.9);
-      display: none;
-    }
-  
-    .navbar-container.open {
-      display: flex;
-    }
-  
-    /* Cuando el menú se abre, que empuje el contenido */
-    .navbar.open + .main-content {
-      margin-top: 180px; /* Ajusta según la altura total del menú */
-    }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent !important; /* Menú transparente */
+    display: none;
   }
-  
+
+  .navbar-container.open {
+    display: flex;
+  }
+
+  /* Empujar el contenido cuando el menú hamburguesa se abre */
+  .navbar.open + .main-content {
+    margin-top: -50px; /* Ajusta según la altura del menú desplegado */
+    transition: margin-top 0.3s ease-in-out;
+  }
+}
