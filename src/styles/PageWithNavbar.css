@@ -1,212 +1,58 @@
-/* Asegura que el body ocupe toda la altura de la ventana */
+.page-background {
+  width: 100%;           /* ya está bien */
+  max-width: 100%;        /* añade esto por robustez */
+  overflow-x: hidden;
+  margin: 0 auto;         /* centra el contenido si algo excede */
+}
+
+/* Secciones generales */
+.hero-container,
+.about-container,
+.tools-container,
+.projects-container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;        /* asegúrate de no pasarte del viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-x: hidden;     /* evita cualquier desborde lateral */
+}
+
+/* Para bloquear scroll horizontal global */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  height: 100%; 
-}
-
-/* Fondo no fijo para la imagen */
-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative; /* Necesario para aplicar pseudo-elementos correctamente */
-  background-color: transparent; /* Fondo transparente debajo de la imagen */
-}
-
-
-
-.page-background {
-  position: relative;
-  width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
-  background-image: url('/assets/back2.jpg');
-  background-size: cover;
-  background-position: center 20% !important; /* ⬅️ Esto desplaza la imagen hacia abajo */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-
-.page-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  backdrop-filter: blur(5px); /* O usa filter: blur(5px); si prefieres */
-  z-index: -1;
-}
-
-
-
-
-
-/* Contenedor principal */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  max-width: 2200px;
-  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   box-sizing: border-box;
-  text-align: center;
-  min-height: calc(90vh - 60px);
-  height: auto;
-  margin: 0 auto;
-  
 }
 
-/* Hero */
+/* Si usas ese selector especial con :has */
+body:has(.hero-container),
+html:has(.hero-container) {
+  overflow-x: hidden;
+}
+
+/* Hero background específico */
 .hero-container {
-  max-width: 1200px;
-  padding: 0 20px;
-}
-
-.hero-title {
-  font-size: 4.8rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 32px;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.description {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: #f2f2f2;
-  margin-bottom: 10px;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}
-
-/* Herramientas */
-.tools-container {
-  max-width: 900px;
-  padding: 0 20px;
-}
-
-.tools-title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #83d2ff;
-  margin-bottom: 20px;
-}
-
-.tools-grid {
+  background: url('/assets/back2.jpg') center/cover no-repeat;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-}
-
-.tool-box {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  padding: 10px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  transition: transform 0.3s;
 }
 
-.tool-box:hover {
-  transform: scale(1.1);
+/* Otras secciones con color */
+.about-container {
+  background-color: #f8f8f8;
 }
-
-.tool-img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-  display: block;
-  transform: scale(1);
+.tools-container {
+  background-color: #eef6ff;
 }
-
-.tool-img[src*="excel.png"],
-.tool-img[src*="powerbi.png"] {
-  transform: scale(1.5);
-}
-
-/* ─────── Media Queries para Responsividad ─────── */
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 4rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-  }
-
-  .tools-title {
-    font-size: 1.8rem;
-  }
-
-  .tool-box {
-    width: 80px;
-    height: 80px;
-  }
-
-  body::before {
-    filter: blur(8px); /* Aplica un desenfoque más fuerte */
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3.2rem;
-  }
-
-  .description {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .tools-title {
-    font-size: 1.6rem;
-  }
-
-  .tool-box {
-    width: 70px;
-    height: 70px;
-  }
-
-  body::before {
-    filter: blur(4px);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .description {
-    font-size: 0.95rem;
-  }
-
-  .tools-title {
-    font-size: 1.4rem;
-  }
-
-  .tool-box {
-    width: 60px;
-    height: 60px;
-  }
-
-  body::before {
-    filter: blur(12px) ;
-  }
+.projects-container {
+  background-color: #fef3f3;
 }

@@ -1,33 +1,25 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import "../styles/Navbar.css";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <nav className={`navbar ${isOpen ? "open" : ""}`}>
-      <div className="navbar-toggle" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <a href="/deploy-example/" className="navbar-brand">Mi Portafolio</a>
       </div>
-
-      <div className={`navbar-container ${isOpen ? "open" : ""}`}>
-        <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Lobby</NavLink>
-        <NavLink to="/Inicio" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Inicio</NavLink>
-        <NavLink to="/Certificaciones" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Certificaciones</NavLink>
-        <NavLink to="/PowerBI" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Power BI</NavLink>
-        <NavLink to="/SMSS" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>SMSS</NavLink>
-        <NavLink to="/Python" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Python</NavLink>
+      <div className="navbar-right">
+        <button onClick={() => scrollToSection("hero")} className="navbar-link">Inicio</button>
+        <button onClick={() => scrollToSection("about")} className="navbar-link">Sobre mí</button>
+        <button onClick={() => scrollToSection("tools")} className="navbar-link">Herramientas</button>
+        <button onClick={() => scrollToSection("projects")} className="navbar-link">Planes</button>
       </div>
     </nav>
   );

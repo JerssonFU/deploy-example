@@ -1,41 +1,74 @@
 import React from "react";
 import "../styles/PageWithNavbar.css";
+import "../styles/Inicio.css"; // añade esto para el CSS de inicio-container
 
 function PageWithNavbar() {
   return (
-    <div className="page-background">
-      <div className="main-content">
-        <div className="hero-container">
-          <div className="hero-text">
-            <h1 className="hero-title">Perfil Profesional </h1>
-            <h2 className="description">
-              Me especializo en el análisis, transformación y visualización de datos utilizando herramientas BI para optimizar la toma de decisiones en las organizaciones. Además, cuento con conocimientos en Front-End, lo que me permite estructurar y presentar la información de manera clara y eficiente, mejorando la experiencia del usuario.
-            </h2>
-          </div>
-        </div>
+    <div className="inicio-container"> {/* <<== nuevo contenedor */}
+      <div className="page-background">
+        <div className="main-content">
 
-        <div className="tools-container">
-          <h2 className="tools-title">Manejo de Herramientas Informáticas</h2>
-          <div className="tools-grid">
-            <div className="tool-box">
-              <img src="./assets/sql.png" alt="SQL Server" className="tool-img" />
-            </div>
-            <div className="tool-box">
-              <img src="./assets/react.png" alt="React" className="tool-img" />
-            </div>
-            <div className="tool-box">
-              <img src="./assets/excel.png" alt="Excel" className="tool-img" />
-            </div>
-            <div className="tool-box">
-              <img src="./assets/powerbi.png" alt="Power BI" className="tool-img" />
-            </div>
-            <div className="tool-box">
-              <img src="./assets/git.png" alt="Git" className="tool-img" />
-            </div>
-            <div className="tool-box">
-              <img src="./assets/python.png" alt="Python" className="tool-img" />
+          {/* HERO SECTION */}
+          <div id="hero" className="hero-container">
+            <div className="hero-text">
+              <h1 className="hero-title">Bienvenidos a mi Portafolio Web</h1>
+              <h2 className="description">
+                Los datos cuentan la historia que el negocio necesita escuchar.
+              </h2>
             </div>
           </div>
+
+          {/* ABOUT SECTION */}
+          <div id="about" className="about-container">
+            <h2 className="about-title">Sobre mí</h2>
+            <p className="about-text">
+              Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
+              Me apasiona transformar datos en estrategias efectivas que impulsen la toma de decisiones en las organizaciones.
+              Manejo herramientas como Power BI, Python, SQL Server y frameworks de Front-End para ofrecer soluciones completas.
+            </p>
+            <div className="about-extra">
+              <a href="/deploy-example/CV_Jersson_Fernandez.pdf" download className="project-button">
+                Descargar mi CV
+              </a>
+            </div>
+          </div>
+
+          {/* TOOLS SECTION */}
+          <div id="tools" className="tools-container">
+            <h2 className="tools-title">Manejo de Herramientas Informáticas</h2>
+            <div className="tools-grid">
+              <div className="tool-box">Herramienta 1</div>
+              <div className="tool-box">Herramienta 2</div>
+              <div className="tool-box">Herramienta 3</div>
+              <div className="tool-box">Herramienta 4</div>
+              <div className="tool-box">Herramienta 5</div>
+              <div className="tool-box">Herramienta 6</div>
+            </div>
+          </div>
+
+          {/* PROJECTS SECTION */}
+          <div id="projects" className="projects-container">
+            <h2 className="projects-title">Elige tu plan</h2>
+            <div className="projects-grid">
+              <div className="project-card">
+                <p className="project-desc">Proyecto 1</p>
+                <a href="#projects" className="project-button">Ver proyecto</a>
+              </div>
+              <div className="project-card">
+                <p className="project-desc">Proyecto 2</p>
+                <a href="#projects" className="project-button">Ver proyecto</a>
+              </div>
+              <div className="project-card">
+                <p className="project-desc">Proyecto 3</p>
+                <a href="#projects" className="project-button">Ver proyecto</a>
+              </div>
+              <div className="project-card">
+                <p className="project-desc">Proyecto 4</p>
+                <a href="#projects" className="project-button">Ver proyecto</a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

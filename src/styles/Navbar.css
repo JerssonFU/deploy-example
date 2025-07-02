@@ -1,186 +1,47 @@
 .navbar {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;           /* Siempre ocupará todo el ancho */
-  height: 60px;           /* O el valor que tú tengas */
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: center;  /* Centra el contenido */
+  justify-content: space-between;
   align-items: center;
-  background: transparent;
-  z-index: 9999; /* muy alto para que esté encima de todo */
-  padding: 0 20px;
-  box-sizing: border-box;
+  background: white;
+  
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;    /* Asegura que padding no sume al ancho total */
 }
 
-/* BOTÓN HAMBURGUESA */
-.navbar-toggle {
-  display: none;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.navbar-container a {
-  text-decoration: none;
-  color: white;
+/* Botón izquierdo */
+.navbar-left .navbar-brand {
   font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  color: #5c3d99;
 }
 
-  
-  .navbar-container a:hover {
-    color: #ffa500;
-  }
-  
-  .navbar-container a.active {
-    color: #ff6600;
-  }
-  
-  /* ❌ Botón hamburguesa oculto en escritorio */
-  .navbar-toggle {
-    display: none;
-  }
-  
-  /* ─────── Media Queries para Responsividad ─────── */
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 4rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-  }
-
-  .tools-title {
-    font-size: 1.8rem;
-  }
-
-  .tool-box {
-    width: 80px;
-    height: 80px;
-  }
-
-  .hamburger-menu.open + .main-content {
-    margin-top: 200px;
-    transition: margin-top 0.3s ease-in-out;
-  }
-
-  body::before {
-    filter: blur(8px);
-  }
+/* Contenedor derecho */
+.navbar-right {
+  display: flex;
+  gap: 15px;
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3.2rem;
-  }
-
-  .description {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .tools-title {
-    font-size: 1.6rem;
-  }
-
-  .tool-box {
-    width: 70px;
-    height: 70px;
-  }
-
-  .hamburger-menu.open + .main-content {
-    margin-top: 200px !important;
-    transition: margin-top 0.3s ease-in-out;
-  }
-
-  body::before {
-    filter: blur(4px) !important;
-  }
-
-  /* ✅ Ajustes del navbar responsive */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 10px 20px;
-    background-color: transparent;
-  }
-
-  .navbar-toggle {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-
-  .navbar-toggle span {
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    margin: 4px 0;
-    border-radius: 2px;
-  }
-
-  .navbar-container {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 4px 20px; /* ⬅️ Reducido para que los links estén más arriba */
-    display: none;
-    gap: 6px;
-  }
-
-  .navbar-container.open {
-    display: flex;
-  }
-
-  .navbar-container a {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 550;
-    padding: 6px 0;
-    margin-top: 2px;
-    width: 100%;
-  }
+/* Botones del navbar */
+.navbar-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .description {
-    font-size: 0.95rem;
-  }
-
-  .tools-title {
-    font-size: 1.4rem;
-  }
-
-  .tool-box {
-    width: 60px;
-    height: 60px;
-  }
-
-  .hamburger-menu.open + .main-content {
-    margin-top: 60px;
-  }
-
-  body::before {
-    filter: blur(12px);
-  }
-}
-
-/* ✅ Empujar el contenido cuando navbar está abierto (en cualquier resolución) */
-.navbar.open + .main-content,
-.navbar.open + * .main-content,
-.navbar.open + * .certificaciones-container {
-  margin-top: 300px; /* Ajustado para links más arriba */
-  transition: margin-top 0.3s ease-in-out;
+.navbar-link:hover {
+  background-color: #f0f0f0;
 }
