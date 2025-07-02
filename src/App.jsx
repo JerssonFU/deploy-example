@@ -8,9 +8,7 @@ function App() {
 
   return (
     <>
-      {/* Mostrar Navbar SOLO si NO está en Home */}
       {location.pathname !== "/" && <Navbar />}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Inicio" element={<PageWithNavbar />} />
