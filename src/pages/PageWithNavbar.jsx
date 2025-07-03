@@ -13,7 +13,7 @@ function PageWithNavbar() {
             <div className="hero-text">
               <h1 className="hero-title">Bienvenidos a mi Portafolio Web</h1>
               <h2 className="description">
-                Los datos cuentan la historia que el negocio necesita escuchar.
+                Los datos cuentan la historia que el negocio necesita escuchar
               </h2>
             </div>
           </div>

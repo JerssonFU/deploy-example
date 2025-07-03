@@ -1,8 +1,5 @@
 .navbar {
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,22 +7,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.9); /* negro con 60% opacidad */
-  
+  background-color: rgba(0,0,0,0.9);
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  box-sizing: border-box;    /* Asegura que padding no sume al ancho total */
+  box-sizing: border-box;
 }
 
-/* Botón izquierdo */
+/* Logo */
 .navbar-left .navbar-brand {
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Contenedor derecho */
+/* Menú normal */
 .navbar-right {
   display: flex;
   gap: 15px;
@@ -33,15 +29,83 @@
 
 .navbar-link {
   font-size: 16px;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 0;
+  color: #fff;
   background: none;
+  border: none;
+  text-decoration: none;
+  padding: 6px 12px;
   transition: color 0.3s ease;
 }
 
 .navbar-link:hover {
   color: #555;
+}
+
+/* Hamburguesa oculta en desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: flex;
+    order: 2;
+  }
+
+  .navbar-left {
+    order: 2; /* logo a la izquierda */
+  }
+
+  .navbar-right {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 20px;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* completamente fuera de la vista */
+  z-index: 999;
+  display: flex;
+}
+
+.navbar-right.open {
+  transform: translateX(0); /* entra suavemente */
+}
+
+}
+
+
+.close-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .close-btn {
+    display: block;
+    background: none;
+    color: white;
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+  }
 }
