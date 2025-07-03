@@ -230,11 +230,12 @@ html:has(.hero-container) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* ocupa toda la altura */
+    height: 100vh;
     width: 100%;
-    padding: 0 1rem;
-    text-align: center;
+    padding: 0;
+    margin: 0;
     position: relative;
+    text-align: center;
   }
 
   .hero-text {
@@ -242,6 +243,9 @@ html:has(.hero-container) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; /* asegura centrado absoluto */
   }
 
   .hero-container::before {
@@ -251,15 +255,27 @@ html:has(.hero-container) {
   .hero-title {
     font-size: 2.2rem;
     color: white;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0;
   }
 
   .description {
     font-size: 1.1rem;
     color: white;
     max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* extra fix para evitar padding/margin global */
+  html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
+
+
 
 
 /* ---------------------- TOOLS ---------------------- */
