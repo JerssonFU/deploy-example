@@ -278,6 +278,76 @@ html:has(.hero-container) {
 
 
 
+
+/* ---------------------- ABOUT SOLO RESPONSIVO ---------------------- */
+@media (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin: 6rem auto 0 auto; /* antes era 0 auto, ahora 2rem auto para bajar */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* bajamos un poco la imagen */
+  }
+
+  .about-image img {
+    max-width: 200px;
+    width: 80%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .about-text-content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-text-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .big-black-button {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+    margin: 1.5rem auto 0 auto; /* añadimos separación arriba del botón */
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------------- TOOLS ---------------------- */
 @media (max-width: 768px) {
   .tools-grid {
@@ -295,6 +365,24 @@ html:has(.hero-container) {
     text-align: center;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---------------------- PROJECTS ---------------------- */
 @media (max-width: 768px) {
