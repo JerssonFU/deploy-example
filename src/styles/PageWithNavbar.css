@@ -56,3 +56,115 @@ html:has(.hero-container) {
 .projects-container {
   background-color: #fef3f3;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.about-container {
+  display: flex;
+  flex-direction: row; /* imagen izquierda, texto derecha */
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: #f8f8f8;
+  gap: 4rem;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-text-content {
+  max-width: 500px;
+}
+
+.about-text-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.big-black-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.big-black-button:hover {
+  background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+.tools-container {
+  background-color: #eef6ff;
+  padding: 1rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tools-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* siempre 3 columnas */
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  justify-items: center; /* centra cada card en su celda */
+  padding-top: 2rem;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tool-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: white;
+  padding: 10px;
+  object-fit: contain; /* Cambia de cover a contain */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.tool-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}

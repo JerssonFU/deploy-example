@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background-color: rgba(0, 0, 0, 0.9); /* negro con 60% opacidad */
   
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -22,7 +22,7 @@
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
-  color: #5c3d99;
+  color: #ffffff;
 }
 
 /* Contenedor derecho */
@@ -31,17 +31,17 @@
   gap: 15px;
 }
 
-/* Botones del navbar */
 .navbar-link {
   font-size: 16px;
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  border: none;
+  border-radius: 0;
+  background: none;
+  transition: color 0.3s ease;
 }
 
 .navbar-link:hover {
-  background-color: #f0f0f0;
+  color: #555;
 }

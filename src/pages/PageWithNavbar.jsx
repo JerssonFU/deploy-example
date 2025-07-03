@@ -19,32 +19,56 @@ function PageWithNavbar() {
           </div>
 
           {/* ABOUT SECTION */}
-          <div id="about" className="about-container">
-            <h2 className="about-title">Sobre mí</h2>
-            <p className="about-text">
-              Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
-              Me apasiona transformar datos en estrategias efectivas que impulsen la toma de decisiones en las organizaciones.
-              Manejo herramientas como Power BI, Python, SQL Server y frameworks de Front-End para ofrecer soluciones completas.
-            </p>
-            <div className="about-extra">
-              <a href="/deploy-example/CV_Jersson_Fernandez.pdf" download className="project-button">
-                Descargar mi CV
-              </a>
-            </div>
-          </div>
+          <div id="about" className="about-container exact-style">
+  <div className="about-image">
+    <img src="./assets/pp.jpg" alt="Jersson Jair Fernández" />
+  </div>
+  <div className="about-text-content">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
+      Me apasiona transformar datos en estrategias efectivas que impulsen la toma de decisiones en las organizaciones.
+      Manejo herramientas como Power BI, Python, SQL Server y frameworks de Front-End para ofrecer soluciones completas.
+    </p>
+    <a href="#certificados" className="big-black-button">
+      Ver Certificados
+    </a>
+  </div>
+</div>
+
+
 
           {/* TOOLS SECTION */}
           <div id="tools" className="tools-container">
-            <h2 className="tools-title">Manejo de Herramientas Informáticas</h2>
-            <div className="tools-grid">
-              <div className="tool-box">Herramienta 1</div>
-              <div className="tool-box">Herramienta 2</div>
-              <div className="tool-box">Herramienta 3</div>
-              <div className="tool-box">Herramienta 4</div>
-              <div className="tool-box">Herramienta 5</div>
-              <div className="tool-box">Herramienta 6</div>
-            </div>
-          </div>
+  <h2 className="tools-title">Manejo de Herramientas Informáticas</h2>
+  <div className="tools-grid">
+    <div className="tool-card">
+      <img src="./assets/excelv8.png" alt="Excel" />
+      <h3>Excel</h3>
+    </div>
+    <div className="tool-card">
+      <img src="./assets/sql.png" alt="Herramienta 2" />
+      <h3>Sql Server</h3>
+    </div>
+    <div className="tool-card">
+      <img src="./assets/powerbiv4.png" alt="Herramienta 3" />
+      <h3>Power Bi</h3>
+    </div>
+    <div className="tool-card">
+      <img src="./assets/python.png" alt="Herramienta 4" />
+      <h3>Python</h3>
+    </div>
+    <div className="tool-card">
+      <img src="./assets/react.png" alt="Herramienta 5" />
+      <h3>React</h3>
+    </div>
+    <div className="tool-card">
+      <img src="./assets/visualv4.png" alt="Herramienta 6" />
+      <h3>Visual</h3>
+    </div>
+  </div>
+</div>
+
 
           {/* PROJECTS SECTION */}
           <div id="projects" className="projects-container">
