@@ -72,26 +72,51 @@ function PageWithNavbar() {
 
           {/* PROJECTS SECTION */}
           <div id="projects" className="projects-container">
-            <h2 className="projects-title">Elige tu plan</h2>
-            <div className="projects-grid">
-              <div className="project-card">
-                <p className="project-desc">Proyecto 1</p>
-                <a href="#projects" className="project-button">Ver proyecto</a>
-              </div>
-              <div className="project-card">
-                <p className="project-desc">Proyecto 2</p>
-                <a href="#projects" className="project-button">Ver proyecto</a>
-              </div>
-              <div className="project-card">
-                <p className="project-desc">Proyecto 3</p>
-                <a href="#projects" className="project-button">Ver proyecto</a>
-              </div>
-              <div className="project-card">
-                <p className="project-desc">Proyecto 4</p>
-                <a href="#projects" className="project-button">Ver proyecto</a>
-              </div>
-            </div>
-          </div>
+  <h2 className="projects-title">PROYECTOS</h2>
+  <div className="plans-grid">
+    <div className="plan-card">
+      <img src="./assets/re.jpeg" alt="Plan Bronce" />
+      <div className="plan-card-content">
+        <h3>Plan Bronce</h3>
+        <p className="plan-state">COMPLETE</p>
+        <p>Por única vez</p>
+        <p className="plan-desc">
+          Acceso ilimitado a clases y talleres exclusivos.
+        </p>
+        <a href="#registro" className="plan-button">Registrarse</a>
+      </div>
+    </div>
+
+    <div className="plan-card">
+      <img src="./assets/re.jpeg" alt="Plan Plata" />
+      <div className="plan-card-content">
+        <h3>Plan Plata</h3>
+        <p className="plan-state">IN PROGRESS</p>
+        <p>Por única vez</p>
+        <p className="plan-desc">
+          Acceso ilimitado a clases y talleres exclusivos.
+        </p>
+        <a href="#registro" className="plan-button">Registrarse</a>
+      </div>
+    </div>
+
+    <div className="plan-card">
+      <img src="./assets/re.jpeg" alt="Plan Oro" />
+      <div className="plan-card-content">
+        <h3>Plan Oro</h3>
+        <p className="plan-state">IN PROGRESS</p>
+        <p>Por única vez</p>
+        <p className="plan-desc">
+          Acceso ilimitado a clases y talleres exclusivos.
+        </p>
+        <a href="#registro" className="plan-button">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
         </div>
       </div>
