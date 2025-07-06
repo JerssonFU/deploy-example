@@ -18,7 +18,7 @@ function Navbar() {
         <span></span><span></span><span></span>
       </div>
       <div className="navbar-left">
-        <a href="/" className="navbar-brand">Mi Portafolio</a>
+        <a href="/deploy-example/" className="navbar-brand">Mi Portafolio</a>
       </div>
       <div className={`navbar-right ${isOpen ? "open" : ""}`}>
   <button className="close-btn" onClick={() => setIsOpen(false)}>←</button>
