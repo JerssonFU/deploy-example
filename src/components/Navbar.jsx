@@ -25,7 +25,9 @@ function Navbar() {
   <button onClick={() => scrollToSection("hero")} className="navbar-link">Inicio</button>
   <button onClick={() => scrollToSection("about")} className="navbar-link">Sobre mí</button>
   <button onClick={() => scrollToSection("tools")} className="navbar-link">Herramientas</button>
-  <button onClick={() => scrollToSection("projects")} className="navbar-link">Planes</button>
+  <button onClick={() => scrollToSection("projects")} className="navbar-link">Proyectos</button>
+  <button onClick={() => scrollToSection("Certificados")} className="navbar-link">Certificados</button>
+
 </div>
 
 
