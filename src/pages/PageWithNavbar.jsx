@@ -120,22 +120,23 @@ function PageWithNavbar() {
 
     <div className="single-certificate fade">
       {index === 0 && (
-        <img src="./assets/cert1.png" alt="Certificado 1" />
+        <img src="./assets/cert1.png" alt="Certificado 1" loading="lazy" />
+
       )}
       {index === 1 && (
-        <img src="./assets/cert2.png" alt="Certificado 2" />
+        <img src="./assets/cert2.png" alt="Certificado 2" loading="lazy" />
       )}
       {index === 2 && (
-        <img src="./assets/cert3.png" alt="Certificado 3" />
+        <img src="./assets/cert3.png" alt="Certificado 3" loading="lazy" />
       )}
       {index === 3 && (
-        <img src="./assets/cert4.png" alt="Certificado 4" />
+        <img src="./assets/cert4.png" alt="Certificado 4" loading="lazy" />
       )}
       {index === 4 && (
-        <img src="./assets/cert5.png" alt="Certificado 5" />
+        <img src="./assets/cert5.png" alt="Certificado 5" loading="lazy" />
       )}
       {index === 5 && (
-        <img src="./assets/cert5.png" alt="Certificado 6" />
+        <img src="./assets/cert5.png" alt="Certificado 6" loading="lazy" />
       )}
     </div>
 
