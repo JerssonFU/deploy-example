@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/PageWithNavbar.css";
 import "../styles/Inicio.css";
 
@@ -116,50 +117,87 @@ function PageWithNavbar() {
           </div>
 
           {/* PROJECTS SECTION */}
-          <div id="projects" className="projects-container">
-            <h2 className="projects-title reveal">PROYECTOS</h2>
+<div id="projects" className="projects-container">
+  <h2 className="projects-title reveal">PROYECTOS</h2>
 
-            <div className="plans-grid reveal">
-              <div className="plan-card">
-                <img src="./assets/re.jpeg" alt="Plan Bronce" />
-                <div className="plan-card-content">
-                  <h3>Plan Bronce</h3>
-                  <p className="plan-state">COMPLETE</p>
-                  <p>Por única vez</p>
-                  <p className="plan-desc">
-                    Acceso ilimitado a clases y talleres exclusivos.
-                  </p>
-                  <a href="#registro" className="plan-button">Registrarse</a>
-                </div>
-              </div>
+  <div className="plans-grid reveal">
 
-              <div className="plan-card">
-                <img src="./assets/re.jpeg" alt="Plan Plata" />
-                <div className="plan-card-content">
-                  <h3>Plan Plata</h3>
-                  <p className="plan-state">IN PROGRESS</p>
-                  <p>Por única vez</p>
-                  <p className="plan-desc">
-                    Acceso ilimitado a clases y talleres exclusivos.
-                  </p>
-                  <a href="#registro" className="plan-button">Registrarse</a>
-                </div>
-              </div>
+    {/* 1 */}
+<div className="plan-card">
+  <img src="./assets/re.jpeg" alt="Plan Bronce" />
+  <div className="plan-card-content">
+    <h3>Plan Bronce</h3>
+    <p className="plan-state">COMPLETE</p>
+    <p>Por única vez</p>
+    <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
+    <Link to="/plan-bronce" className="plan-button">Registrarse</Link>
+  </div>
+</div>
 
-              <div className="plan-card">
-                <img src="./assets/re.jpeg" alt="Plan Oro" />
-                <div className="plan-card-content">
-                  <h3>Plan Oro</h3>
-                  <p className="plan-state">IN PROGRESS</p>
-                  <p>Por única vez</p>
-                  <p className="plan-desc">
-                    Acceso ilimitado a clases y talleres exclusivos.
-                  </p>
-                  <a href="#registro" className="plan-button">Registrarse</a>
-                </div>
-              </div>
-            </div>
-          </div>
+{/* 2 */}
+<div className="plan-card">
+  <img src="./assets/re.jpeg" alt="Plan Plata" />
+  <div className="plan-card-content">
+    <h3>Plan Plata</h3>
+    <p className="plan-state">IN PROGRESS</p>
+    <p>Por única vez</p>
+    <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
+    <Link to="/plan-plata" className="plan-button">Registrarse</Link>
+  </div>
+</div>
+
+{/* 3 */}
+<div className="plan-card">
+  <img src="./assets/re.jpeg" alt="Plan Oro" />
+  <div className="plan-card-content">
+    <h3>Plan Oro</h3>
+    <p className="plan-state">IN PROGRESS</p>
+    <p>Por única vez</p>
+    <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
+    <Link to="/plan-oro" className="plan-button">Registrarse</Link>
+  </div>
+</div>
+
+{/* 4 */}
+<div className="plan-card">
+  <img src="./assets/re.jpeg" alt="Plan Beta" />
+  <div className="plan-card-content">
+    <h3>Plan Beta</h3>
+    <p className="plan-state">IN PROGRESS</p>
+    <p>Por única vez</p>
+    <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
+    <Link to="/plan-beta" className="plan-button">Registrarse</Link>
+  </div>
+</div>
+
+{/* 5 */}
+<div className="plan-card">
+  <img src="./assets/re.jpeg" alt="Plan Gamma" />
+  <div className="plan-card-content">
+    <h3>Plan Gamma</h3>
+    <p className="plan-state">COMPLETE</p>
+    <p>Por única vez</p>
+    <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
+    <Link to="/plan-gamma" className="plan-button">Registrarse</Link>
+  </div>
+</div>
+
+{/* 6 */}
+<div className="plan-card">
+  <img src="./assets/re.jpeg" alt="Plan Delta" />
+  <div className="plan-card-content">
+    <h3>Plan Delta</h3>
+    <p className="plan-state">IN PROGRESS</p>
+    <p>Por única vez</p>
+    <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
+    <Link to="/plan-delta" className="plan-button">Registrarse</Link>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
 
           {/* =============================== */}
           {/*     🎓   SECCIÓN CERTIFICADOS     */}

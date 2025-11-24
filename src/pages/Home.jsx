@@ -35,7 +35,7 @@ function Home() {
 
         {/* Botón de WhatsApp con icono mejor alineado */}
         <a 
-          href="https://wa.me/961642598" 
+          href="https://wa.me/938798477" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="whatsapp-link animated-button"
