@@ -1,10 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/PageWithNavbar.css";
 import "../styles/Inicio.css";
 
 function PageWithNavbar() {
-  const [index, setIndex] = useState(0);
-  const total = 6; // número de certificados
+
+  /* --- CONFIGURACIÓN DEL CARRUSEL INFINITO REAL --- */
+  const total = 6;
+  const [index, setIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  // 🚀 Evita doble animación usando reset DESPUÉS del transitionEnd
+  const handleTransitionEnd = () => {
+    if (index === 0) {
+      setIsTransitioning(false);
+      setIndex(total); // salto sin transición
+    }
+
+    if (index === total + 1) {
+      setIsTransitioning(false);
+      setIndex(1); // salto sin transición
+    }
+  };
+
+  // 🚀 Se activa animación SOLO cuando ya estamos en un slide real
+  useEffect(() => {
+    if (index > 0 && index < total + 1) {
+      requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+    }
+  }, [index]);
+
+  /* === SISTEMA REVEAL (solo para contenido interno) === */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="inicio-container">
@@ -13,7 +56,7 @@ function PageWithNavbar() {
 
           {/* HERO SECTION */}
           <div id="hero" className="hero-container">
-            <div className="hero-text">
+            <div className="hero-text reveal">
               <h1 className="hero-title">Bienvenidos a mi Portafolio Web</h1>
               <h2 className="description">
                 Los datos cuentan la historia que el negocio necesita escuchar
@@ -23,10 +66,11 @@ function PageWithNavbar() {
 
           {/* ABOUT SECTION */}
           <div id="about" className="about-container exact-style">
-            <div className="about-image">
+            <div className="about-image reveal">
               <img src="./assets/pp.jpg" alt="Jersson Jair Fernández" />
             </div>
-            <div className="about-text-content">
+
+            <div className="about-text-content reveal">
               <h2>Sobre mí</h2>
               <p>
                 Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
@@ -41,8 +85,9 @@ function PageWithNavbar() {
 
           {/* TOOLS SECTION */}
           <div id="tools" className="tools-container">
-            <h2 className="tools-title">Manejo de Herramientas Informáticas</h2>
-            <div className="tools-grid">
+            <h2 className="tools-title reveal">Manejo de Herramientas Informáticas</h2>
+
+            <div className="tools-grid reveal">
               <div className="tool-card">
                 <img src="./assets/excelv8.png" alt="Excel" />
                 <h3>Excel</h3>
@@ -72,8 +117,9 @@ function PageWithNavbar() {
 
           {/* PROJECTS SECTION */}
           <div id="projects" className="projects-container">
-            <h2 className="projects-title">PROYECTOS</h2>
-            <div className="plans-grid">
+            <h2 className="projects-title reveal">PROYECTOS</h2>
+
+            <div className="plans-grid reveal">
               <div className="plan-card">
                 <img src="./assets/re.jpeg" alt="Plan Bronce" />
                 <div className="plan-card-content">
@@ -86,6 +132,7 @@ function PageWithNavbar() {
                   <a href="#registro" className="plan-button">Registrarse</a>
                 </div>
               </div>
+
               <div className="plan-card">
                 <img src="./assets/re.jpeg" alt="Plan Plata" />
                 <div className="plan-card-content">
@@ -98,6 +145,7 @@ function PageWithNavbar() {
                   <a href="#registro" className="plan-button">Registrarse</a>
                 </div>
               </div>
+
               <div className="plan-card">
                 <img src="./assets/re.jpeg" alt="Plan Oro" />
                 <div className="plan-card-content">
@@ -113,53 +161,53 @@ function PageWithNavbar() {
             </div>
           </div>
 
-{/* CERTIFICADOS SECTION */}
-<div id="Certificados" className="certificates-showcase">
-  <h2 className="certificates-title">Certificados Obtenidos</h2>
-  <div className="carousel-container single-slide">
+          {/* =============================== */}
+          {/*     🎓   SECCIÓN CERTIFICADOS     */}
+          {/* =============================== */}
 
-    <div className="single-certificate fade">
-      {index === 0 && (
-        <img src="./assets/cert1.png" alt="Certificado 1" loading="lazy" />
+          <div id="Certificados" className="certificates-showcase">
+            <h2 className="certificates-title reveal">Certificados Obtenidos</h2>
 
-      )}
-      {index === 1 && (
-        <img src="./assets/cert2.png" alt="Certificado 2" loading="lazy" />
-      )}
-      {index === 2 && (
-        <img src="./assets/cert3.png" alt="Certificado 3" loading="lazy" />
-      )}
-      {index === 3 && (
-        <img src="./assets/cert4.png" alt="Certificado 4" loading="lazy" />
-      )}
-      {index === 4 && (
-        <img src="./assets/cert5.png" alt="Certificado 5" loading="lazy" />
-      )}
-      {index === 5 && (
-        <img src="./assets/cert5.png" alt="Certificado 6" loading="lazy" />
-      )}
-    </div>
+            <div className="carousel-wrapper reveal">
 
-    <div className="buttons-row">
-      <button className="nav prev"
-        onClick={() => setIndex(index === 0 ? total - 1 : index - 1)}>
-        &#10094;
-      </button>
+              {/* Botón Izquierdo */}
+              <button className="nav prev" onClick={() => setIndex(index - 1)}>
+                &#10094;
+              </button>
 
-      <button className="nav next"
-        onClick={() => setIndex(index === total - 1 ? 0 : index + 1)}>
-        &#10095;
-      </button>
-    </div>
-  </div>
-</div>
+              <div className="carousel-container">
+                <div
+                  className="carousel-track"
+                  onTransitionEnd={handleTransitionEnd}
+                  style={{
+                    transform: `translateX(-${index * 100}%)`,
+                    transition: isTransitioning ? "transform 0.55s ease-in-out" : "none"
+                  }}
+                >
+                  {/* CLON DEL ÚLTIMO */}
+                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
 
+                  {/* SLIDES REALES */}
+                  <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
+                  <div className="slide"><img src="./assets/cert2.png" loading="lazy" /></div>
+                  <div className="slide"><img src="./assets/cert3.png" loading="lazy" /></div>
+                  <div className="slide"><img src="./assets/cert4.png" loading="lazy" /></div>
+                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
+                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
 
+                  {/* CLON DEL PRIMERO */}
+                  <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
 
+                </div>
+              </div>
 
+              {/* Botón Derecho */}
+              <button className="nav next" onClick={() => setIndex(index + 1)}>
+                &#10095;
+              </button>
 
-
-
+            </div>
+          </div>
 
         </div>
       </div>

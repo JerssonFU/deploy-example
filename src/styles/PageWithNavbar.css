@@ -1,3 +1,20 @@
+/* ========================================
+        🌟 REVEAL – ONLY CONTENT
+======================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
 .page-background {
   width: 100%;           /* ya está bien */
   max-width: 100%;        /* añade esto por robustez */
@@ -164,7 +181,7 @@ html:has(.hero-container) {
 .tools-title {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #fff; /* añade el color blanco */
+  color: #fff !important; /* añade el color blanco */
 }
 
 .tools-grid {
@@ -178,27 +195,49 @@ html:has(.hero-container) {
 }
 
 .tool-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  padding: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.tool-card h3 {
+  color: #ffffff !important;
+  font-weight: 600;
+  margin-top: 1rem;
   text-align: center;
-  color: #fff; /* añade el color blanco */
+  text-shadow: 0 2px 8px rgba(0, 255, 255, 0.25);
+}
+
+
+.tool-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: transparent;
+  background-size: 300% 300%;
+  animation: neon 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes neon {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .tool-card img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: white;
-  padding: 10px;
-  object-fit: contain; /* Cambia de cover a contain */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 130px;
+  animation: breathe 3s infinite ease-in-out;
 }
 
-
-.tool-card h3 {
-  font-size: 1.1rem;
-  margin: 0;
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
 }
 
 
@@ -286,83 +325,127 @@ html:has(.hero-container) {
 
 /* ---------------------- Certificate SECTION ---------------------- */
 .certificates-showcase {
-  position: relative;
   width: 100%;
   min-height: 100vh;
   background: #101010;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 0;
 }
 
 .certificates-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
 }
 
+/* ---------------------- CARRUSEL ---------------------- */
 .carousel-container {
   width: 90%;
   max-width: 1000px;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-}
-
-/* contenedor del slide */
-.single-certificate {
-  max-height: 550px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.single-certificate img {
-  max-height: 550px;
-  max-width: 90%;
-  width: auto;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  opacity: 0;
-  animation: fadeIn 0.4s forwards;
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* BOTONES para escritorio: a los lados */
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+/* ---------------------- BOTONES PREMIUM ---------------------- */
+.carousel-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
-  color: #101010;
-  font-size: 2.5rem;
-  border: none;
-  padding: 12px 20px;
-  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255,255,255,0.3);
   border-radius: 50%;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
   z-index: 20;
-  transition: background 0.3s, transform 0.3s;
-}
+  color: white;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 
-.nav.prev { left: -60px; }
-.nav.next { right: -60px; }
+  /* ⭐ Correcciones nuevas */
+  line-height: 0;
+  padding-left: 2px;
+}
 
 .nav:hover {
-  background: rgba(240, 240, 240, 0.9);
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255,255,255,0.7);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.4),
+    0 0 25px rgba(255,255,255,0.25);
 }
 
-/* Animación fade */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to   { opacity: 1; transform: scale(1); }
+.nav.prev {
+  left: -90px;
 }
+
+.nav.next {
+  right: -90px;
+}
+
+/* ---------------------- MOBILE ---------------------- */
+@media (max-width: 768px) {
+  .nav {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    position: static;
+    transform: none !important;
+    margin: 10px;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+  }
+}
+
+
+
 
 
 
