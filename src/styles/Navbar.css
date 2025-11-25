@@ -120,31 +120,37 @@
 
 @media (max-width: 768px) {
 
+  /* Navbar más angosto SOLO en móvil */
   .navbar {
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 0.8rem;
-  min-height: 55px;   /* <- ALTURA CORRECTA PARA MOVIL */
-  align-items: center; /* <- centra verticalmente la hamburguesa y título */
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 55px;
+    align-items: center;
+  }
+
+  .navbar-left .navbar-brand {
+  margin-left: -18rem !important;   /* Acerca el texto sin mover la hamburguesa */
 }
 
-
-  .menu-toggle {
+  /* Hamburguesa más cerca del título */
+  .navbar .menu-toggle {
     display: flex;
     order: 1;
-    margin-right: auto;
+    margin-right: 0.25rem !important;
   }
 
-  .navbar-left {
+  /* Acercar el texto "Mi Portafolio" */
+  .navbar .navbar-left {
     order: 2;
-    margin-left: auto;
+    margin-left: 0.2rem !important;
   }
 
+  /* Menú lateral */
   .navbar-right {
     position: fixed;
     top: 0;
     left: 0;
-    width: 70%;
+    width: 70%;                /* ← antes 80%, ahora más compacto */
     height: 100%;
     background: rgba(0,0,0,0.95);
     flex-direction: column;
@@ -161,7 +167,7 @@
     transform: translateX(0);
   }
 
-  /* ÍCONOS SOLO EN MÓVIL */
+  /* Íconos móviles */
   .menu-icon {
     display: inline-block;
     font-size: 22px;
@@ -174,9 +180,9 @@
     margin-right: 10px;
   }
 
-  /* CABECERA DEL MENÚ */
+  /* Cabecera del menú */
   .menu-header {
-    display: block;    /* <- AHORA SÍ aparece en móvil */
+    display: block;
     width: 100%;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -192,7 +198,7 @@
     margin: 0;
   }
 
-  /* Opciones del menú */
+  /* Links de menú */
   .navbar-link {
     width: 100%;
     color: white;
@@ -207,7 +213,7 @@
     text-align: left;
   }
 
-  /* Botón X SOLO en menú abierto */
+  /* Botón X */
   .navbar-right.open .close-btn {
     display: block !important;
     background: none;
