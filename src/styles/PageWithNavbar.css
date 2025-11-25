@@ -526,11 +526,13 @@ html:has(.hero-container) {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 2rem;
+    gap: 0rem;
     padding: 2rem 1rem;
     margin: 6rem auto 0 auto; /* antes era 0 auto, ahora 2rem auto para bajar */
     width: 100%;
     box-sizing: border-box;
+  margin-top: 3rem; /* antes era 6rem */
+  padding-top: 1rem;
   }
 
   .about-image {
