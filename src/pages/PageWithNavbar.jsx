@@ -199,53 +199,57 @@ function PageWithNavbar() {
 </div>
 
 
-          {/* =============================== */}
-          {/*     🎓   SECCIÓN CERTIFICADOS     */}
-          {/* =============================== */}
+{/* =============================== */}
+{/*     🎓   SECCIÓN CERTIFICADOS     */}
+{/* =============================== */}
 
-          <div id="Certificados" className="certificates-showcase">
-            <h2 className="certificates-title reveal">Certificados Obtenidos</h2>
+<div id="Certificados" className="certificates-showcase">
+  <h2 className="certificates-title reveal">Certificados Obtenidos</h2>
 
-            <div className="carousel-wrapper reveal">
+  <div className="carousel-wrapper reveal">
 
-              {/* Botón Izquierdo */}
-              <button className="nav prev" onClick={() => setIndex(index - 1)}>
-                &#10094;
-              </button>
+    {/* CONTENEDOR DEL CARRUSEL (IMAGEN ARRIBA) */}
+    <div className="carousel-container">
+      <div
+        className="carousel-track"
+        onTransitionEnd={handleTransitionEnd}
+        style={{
+          transform: `translateX(-${index * 100}%)`,
+          transition: isTransitioning ? "transform 0.55s ease-in-out" : "none"
+        }}
+      >
+        {/* CLON DEL ÚLTIMO */}
+        <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
 
-              <div className="carousel-container">
-                <div
-                  className="carousel-track"
-                  onTransitionEnd={handleTransitionEnd}
-                  style={{
-                    transform: `translateX(-${index * 100}%)`,
-                    transition: isTransitioning ? "transform 0.55s ease-in-out" : "none"
-                  }}
-                >
-                  {/* CLON DEL ÚLTIMO */}
-                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
+        {/* SLIDES REALES */}
+        <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
+        <div className="slide"><img src="./assets/cert2.png" loading="lazy" /></div>
+        <div className="slide"><img src="./assets/cert3.png" loading="lazy" /></div>
+        <div className="slide"><img src="./assets/cert4.png" loading="lazy" /></div>
+        <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
+        <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
 
-                  {/* SLIDES REALES */}
-                  <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert2.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert3.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert4.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
+        {/* CLON DEL PRIMERO */}
+        <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
 
-                  {/* CLON DEL PRIMERO */}
-                  <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
+      </div>
+    </div>
 
-                </div>
-              </div>
+    {/* 🔥 BOTONES JUNTOS DEBAJO DE LA IMAGEN */}
+    <div className="carousel-buttons">
+      <button className="nav prev" onClick={() => setIndex(index - 1)}>
+        &#10094;
+      </button>
 
-              {/* Botón Derecho */}
-              <button className="nav next" onClick={() => setIndex(index + 1)}>
-                &#10095;
-              </button>
+      <button className="nav next" onClick={() => setIndex(index + 1)}>
+        &#10095;
+      </button>
+    </div>
 
-            </div>
-          </div>
+  </div>
+</div>
+
+
 
         </div>
       </div>

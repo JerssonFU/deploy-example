@@ -429,10 +429,12 @@ html:has(.hero-container) {
 
 .nav.prev {
   left: -90px;
+  padding-left: 2px; /* mueve la flecha un poquito al centro */
 }
 
 .nav.next {
   right: -90px;
+  padding-right: 0px !important; /* para que ambas se vean idénticas */
 }
 
 /* ---------------------- MOBILE ---------------------- */
@@ -729,46 +731,78 @@ html:has(.hero-container) {
 
 
 
-
+/* ---------------------- Certificaciones — SOLO RESPONSIVO ---------------------- */
 @media (max-width: 768px) {
 
   .certificates-title {
-    margin-top: 100px; /* reducido para acercarlo */
-    margin-bottom: -100px; /* si quieres controlar también la separación inferior */
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
+  /* Imagen centrada */
   .carousel-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+
+    order: 1 !important; /* Imagen siempre primero */
+  }
+
+  .carousel-track {
+    display: flex;
+  }
+
+  .slide img {
+    width: 95%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    padding: 8px;
+  }
+
+  /* ====== 🔥 Botones en fila debajo ====== */
+
+  /* Contenedor del carrusel */
+  .carousel-wrapper {
+    display: flex;
+    flex-direction: column; /* vertical */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* 🔥 Botones JUNTOS y ABAJO */
+  .carousel-buttons {
+    order: 2 !important;      /* Botones después de la imagen */
+    display: flex !important; /* Forzamos fila */
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .carousel-buttons .nav {
+    position: static !important;
+    transform: none !important;
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
-  .single-certificate {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .single-certificate img {
-    max-width: 95%;
-    max-height: 300px;
-  }
-
-  /* nuevo: agrupamos botones juntos horizontalmente */
-  .carousel-container .buttons-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .carousel-container .nav {
-    position: static;
-    transform: none;
-    margin: 0;
-    font-size: 2rem;
-    padding: 3px 14px;
-  }
 }
-
-
