@@ -17,54 +17,46 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* NAVBAR IZQUIERDA */}
-      <div className="navbar-left">
+  <div className="navbar-left">
+    {!isPlanPage && (
+      <a href="/deploy-example/" className="navbar-brand">Mi Portafolio</a>
+    )}
 
-        {/* Mostrar logo solo cuando NO estamos en planes */}
-        {!isPlanPage && (
-          <a href="/deploy-example/" className="navbar-brand">Mi Portafolio</a>
-        )}
+    {isPlanPage && (
+      <Link to="/Inicio" className="navbar-back-btn">
+        Volver
+      </Link>
+    )}
+  </div>
 
-        {/* Mostrar botón VOLVER cuando SÍ es un plan */}
-        {isPlanPage && (
-          <Link to="/Inicio" className="navbar-back-btn">
-            Volver
-          </Link>
-        )}
+  {/* Botón hamburguesa */}
+  {!isPlanPage && (
+    <div className="menu-toggle" onClick={() => setIsOpen(true)}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  )}
 
-      </div>
+  {/* Menú móvil */}
+  <div className={`navbar-right ${isOpen ? "open" : ""}`}>
+    <button className="close-btn" onClick={() => setIsOpen(false)}>
+      &times;
+    </button>
 
-      {/* NAVBAR DERECHA */}
-      <div className={`navbar-right ${isOpen ? "open" : ""}`}>
+    {!isPlanPage && (
+      <>
+        <button className="navbar-link" onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}>Inicio</button>
+        <button className="navbar-link" onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}>Sobre mí</button>
+        <button className="navbar-link" onClick={() => document.getElementById("tools")?.scrollIntoView({ behavior: "smooth" })}>Herramientas</button>
+        <button className="navbar-link" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>Proyectos</button>
+        <button className="navbar-link" onClick={() => document.getElementById("Certificados")?.scrollIntoView({ behavior: "smooth" })}>Certificados</button>
+      </>
+    )}
+  </div>
 
-        {/* Ocultar todos los links si es un plan */}
-        {!isPlanPage && (
-          <>
-            <button className="navbar-link" onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}>
-              Inicio
-            </button>
-            <button className="navbar-link" onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}>
-              Sobre mí
-            </button>
-            <button className="navbar-link" onClick={() => document.getElementById("tools")?.scrollIntoView({ behavior: "smooth" })}>
-              Herramientas
-            </button>
-            <button className="navbar-link" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
-              Proyectos
-            </button>
-            <button className="navbar-link" onClick={() => document.getElementById("Certificados")?.scrollIntoView({ behavior: "smooth" })}>
-              Certificados
-            </button>
-          </>
-        )}
+</nav>
 
-        {/* ⭐ FIX: Placeholder invisible para mantener altura */}
-        {isPlanPage && (
-          <div style={{ width: "80px", height: "1px" }}></div>
-        )}
-
-      </div>
-    </nav>
   );
 }
 
