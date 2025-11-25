@@ -66,23 +66,32 @@ function PageWithNavbar() {
           </div>
 
           {/* ABOUT SECTION */}
-          <div id="about" className="about-container exact-style">
-            <div className="about-image reveal">
-              <img src="./assets/pp.jpg" alt="Jersson Jair Fernández" />
-            </div>
+<div id="about" className="about-container exact-style">
+  <div className="about-image reveal">
+    <img src="./assets/pp.jpg" alt="Jersson Jair Fernández" />
+  </div>
 
-            <div className="about-text-content reveal">
-              <h2>Sobre mí</h2>
-              <p>
-                Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
-                Me apasiona transformar datos en estrategias efectivas que impulsen la toma de decisiones en las organizaciones.
-                Manejo herramientas como Power BI, Python, SQL Server y frameworks de Front-End para ofrecer soluciones completas.
-              </p>
-              <a href="#Certificados" className="big-black-button">
-                Ver Certificados
-              </a>
-            </div>
-          </div>
+  <div className="about-text-content reveal">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
+      Me apasiona transformar datos en estrategias efectivas que impulsen la toma de decisiones en las organizaciones.
+      Manejo herramientas como Power BI, Python, SQL Server y frameworks de Front-End para ofrecer soluciones completas.
+    </p>
+
+    {/* 🔵 NUEVO BOTÓN LINKEDIN 🔵 */}
+    <a
+      href="https://www.linkedin.com/in/jersson-jair-fernández-uchuya-a63165382"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="linkedin-button"
+    >
+      <img src="./assets/linkedin.jpg" alt="LinkedIn" className="linkedin-icon" />
+      Ver Perfil LinkedIn
+    </a>
+  </div>
+</div>
+
 
           {/* TOOLS SECTION */}
           <div id="tools" className="tools-container">
