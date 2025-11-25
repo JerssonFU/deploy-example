@@ -129,7 +129,7 @@
   }
 
   .navbar-left .navbar-brand {
-  margin-left: -18rem !important;   /* Acerca el texto sin mover la hamburguesa */
+  margin-left: -13rem !important;   /* Acerca el texto sin mover la hamburguesa */
 }
 
   /* Hamburguesa más cerca del título */
