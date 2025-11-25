@@ -78,51 +78,138 @@
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-  }
-
-  .menu-toggle {
-    display: flex;
-    order: 2;
-  }
-
-  .navbar-left {
-    order: 2; /* logo a la izquierda */
-  }
-
-  .navbar-right {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70%;
-  height: 100%;
-  background: rgba(0,0,0,0.95);
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 2rem;
-  gap: 20px;
-  transition: transform 0.3s ease;
-  transform: translateX(-100%); /* completamente fuera de la vista */
-  z-index: 999;
-  display: flex;
-}
-
-.navbar-right.open {
-  transform: translateX(0); /* entra suavemente */
-}
-
-}
 
 
+
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* ====== OCULTAR ELEMENTOS MÓVILES EN DESKTOP ========= */
+/* ===================================================== */
+
+/* Ocultar siempre la X por defecto en cualquier tamaño */
 .close-btn {
+  display: none !important;
+}
+
+/* Ocultar cabecera del menú móvil en escritorio */
+.menu-header {
   display: none;
 }
 
+.menu-icon-header {
+  display: none;
+}
+
+/* Ocultar ICONOS del menú en escritorio */
+.menu-icon {
+  display: none;
+}
+
+
+
+/* ============================= */
+/* ========    RESPONSIVE   ==== */
+/* ============================= */
+
 @media (max-width: 768px) {
-  .close-btn {
-    display: block;
+
+  .navbar {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+  min-height: 55px;   /* <- ALTURA CORRECTA PARA MOVIL */
+  align-items: center; /* <- centra verticalmente la hamburguesa y título */
+}
+
+
+  .menu-toggle {
+    display: flex;
+    order: 1;
+    margin-right: auto;
+  }
+
+  .navbar-left {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .navbar-right {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 26px;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 999;
+    display: flex;
+  }
+
+  .navbar-right.open {
+    transform: translateX(0);
+  }
+
+  /* ÍCONOS SOLO EN MÓVIL */
+  .menu-icon {
+    display: inline-block;
+    font-size: 22px;
+    margin-right: 12px;
+  }
+
+  .menu-icon-header {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  /* CABECERA DEL MENÚ */
+  .menu-header {
+    display: block;    /* <- AHORA SÍ aparece en móvil */
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .menu-line {
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 10px;
+    margin: 0;
+  }
+
+  /* Opciones del menú */
+  .navbar-link {
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 16px 0;
+    letter-spacing: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  /* Botón X SOLO en menú abierto */
+  .navbar-right.open .close-btn {
+    display: block !important;
     background: none;
     color: white;
     font-size: 28px;
