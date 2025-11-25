@@ -10,7 +10,7 @@ function Home() {
       <div className="text-container">
         <h1 className="main-title">Jersson Jair Fernández Uchuya</h1>
         <h2 className="sub-title wave-effect">
-        📶 Business Intelligence Analyst 🌎
+        📶 Business Intelligence & Data Analyst 🌎
         </h2>
         <p className="simple">
           Aquí podrás ver mis proyectos más recientes y contactarme para cualquier consulta.
