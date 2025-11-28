@@ -733,14 +733,24 @@ html:has(.hero-container) {
 }
 
 
-/* ---------------------- Certificaciones — SOLO RESPONSIVO ---------------------- */
+/* ---------------------- CERTIFICACIONES — RESPONSIVE ---------------------- */
 @media (max-width: 768px) {
 
+  .certificates-container {
+    /* 👉 Ajusta este valor para subir o bajar la sección */
+    padding-top: 4rem !important;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .certificates-title {
-    margin-top: 2.5rem;
+    margin-top: 0 !important;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    padding: 0 1rem;
   }
 
   .carousel-container {
@@ -801,6 +811,7 @@ html:has(.hero-container) {
     align-items: center;
   }
 }
+
 
 /* ============================================
    REVEAL SUAVE PARA TARJETAS DE PROYECTOS
