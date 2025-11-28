@@ -657,21 +657,22 @@ html:has(.hero-container) {
 }
 
 
-/* ---------------------- PROJECTS ---------------------- */
+/* ---------------------- PROJECTS RESPONSIVE ---------------------- */
 @media (max-width: 768px) {
   .projects-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    /* 🔥 CORRECCIÓN EN PROJECTS TAMBIÉN */
-    min-height: 100svh;
+    /* Mantiene el alto correcto sin romper el scroll */
+    min-height: auto !important;
     height: auto;
 
     box-sizing: border-box;
-    padding: 2rem 1rem;
-    padding-top: 7rem;
+
+    /* 👉 Ajusta este valor para subir/bajar la sección */
+    padding: 4rem 1rem 2rem 1rem !important;
   }
 
   .projects-title {
@@ -680,7 +681,10 @@ html:has(.hero-container) {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    margin: 0 auto;
+
+    /* 👉 Subimos el título también */
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
   }
 
   .plans-grid {
@@ -695,7 +699,7 @@ html:has(.hero-container) {
   .plan-card {
     width: 90%;
     max-width: 400px;
-    margin: 1.5rem auto;
+    margin: 1.2rem auto;
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 
@@ -704,8 +708,8 @@ html:has(.hero-container) {
     align-items: center;
     text-align: center;
 
-    box-sizing: border-box;
     padding: 1rem;
+    box-sizing: border-box;
   }
 
   .plan-card img {
@@ -727,6 +731,7 @@ html:has(.hero-container) {
     margin-top: 1rem;
   }
 }
+
 
 /* ---------------------- Certificaciones — SOLO RESPONSIVO ---------------------- */
 @media (max-width: 768px) {
