@@ -453,23 +453,18 @@ html:has(.hero-container) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ---------------------- HERO SOLO RESPONSIVO ---------------------- */
 @media (max-width: 768px) {
   .hero-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    /* 🔥 CORRECCIÓN REAL PARA EL DESCENTRADO */
+    min-height: 100svh !important;
+    height: 100dvh !important;
+    overflow: hidden;
+
     width: 100%;
     padding: 0;
     margin: 0;
@@ -484,7 +479,7 @@ html:has(.hero-container) {
     align-items: center;
     width: 100%;
     text-align: center;
-    margin: 0 auto; /* asegura centrado absoluto */
+    margin: 0 auto;
   }
 
   .hero-container::before {
@@ -504,7 +499,6 @@ html:has(.hero-container) {
     margin: 0 auto;
   }
 
-  /* extra fix para evitar padding/margin global */
   html, body {
     padding: 0;
     margin: 0;
@@ -514,10 +508,6 @@ html:has(.hero-container) {
   }
 }
 
-
-
-
-
 /* ---------------------- ABOUT SOLO RESPONSIVO ---------------------- */
 @media (max-width: 768px) {
   .about-container {
@@ -526,20 +516,22 @@ html:has(.hero-container) {
     justify-content: center;
     align-items: center;
     text-align: center;
+
     gap: 0rem;
     padding: 2rem 1rem;
-    margin: 6rem auto 0 auto; /* antes era 0 auto, ahora 2rem auto para bajar */
+
+    margin-top: 3rem;
+    padding-top: 1rem;
+
     width: 100%;
     box-sizing: border-box;
-  margin-top: 3rem; /* antes era 6rem */
-  padding-top: 1rem;
   }
 
   .about-image {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 1rem; /* bajamos un poco la imagen */
+    margin-top: 1rem;
   }
 
   .about-image img {
@@ -570,15 +562,13 @@ html:has(.hero-container) {
   .big-black-button {
     padding: 0.7rem 1.8rem;
     font-size: 1rem;
-    margin: 1.5rem auto 0 auto; /* añadimos separación arriba del botón */
+    margin: 1.5rem auto 0 auto;
     display: inline-block;
   }
 }
 
-
-
 /* -------------------------------------- */
-/*           BOTÓN LINKEDIN PERSONAL       */
+/*      BOTÓN LINKEDIN PERSONAL           */
 /* -------------------------------------- */
 
 .linkedin-button {
@@ -587,7 +577,7 @@ html:has(.hero-container) {
   gap: 10px;
 
   padding: 0.8rem 2rem;
-  background-color: #0A66C2; /* color oficial LinkedIn */
+  background-color: #0A66C2;
   color: white;
   text-decoration: none;
   border-radius: 30px;
@@ -597,7 +587,7 @@ html:has(.hero-container) {
 }
 
 .linkedin-button:hover {
-  background-color: #004182; /* hover oficial */
+  background-color: #004182;
 }
 
 .linkedin-icon {
@@ -606,27 +596,13 @@ html:has(.hero-container) {
   object-fit: contain;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------------------- TOOLS RESPONSIVE PERFECTO ---------------------- */
 @media (max-width: 768px) {
-
   .tools-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;      /* <-- CENTRA TODO EL BLOQUE */
+    align-items: center;
     justify-content: center;
     padding: 2rem 0;
   }
@@ -639,15 +615,15 @@ html:has(.hero-container) {
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* <-- 3 COLUMNAS FIJAS Y SIMÉTRICAS */
+    grid-template-columns: repeat(3, 1fr);
     
     gap: 1.5rem;
 
     width: 100%;
-    max-width: 320px;          /* <-- AHORA SÍ CENTRA PERFECTO */
-    margin: 0 auto;            /* <-- CENTRADO REAL */
-    
-    justify-items: center;     /* <-- CENTRA CADA CELDA */
+    max-width: 320px;
+    margin: 0 auto;
+
+    justify-items: center;
     align-items: center;
   }
 
@@ -670,39 +646,21 @@ html:has(.hero-container) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------------------- PROJECTS ---------------------- */
 @media (max-width: 768px) {
   .projects-container {
     display: flex;
     flex-direction: column;
-    align-items: center;    /* centra horizontal */
-    justify-content: center;/* centra vertical */
-    min-height: 100vh;      /* ocupa toda la altura de la pantalla */
+    align-items: center;
+    justify-content: center;
+
+    /* 🔥 CORRECCIÓN EN PROJECTS TAMBIÉN */
+    min-height: 100svh;
+    height: auto;
+
     box-sizing: border-box;
     padding: 2rem 1rem;
-    padding-top: 7rem;  /* da espacio arriba */
+    padding-top: 7rem;
   }
 
   .projects-title {
@@ -729,10 +687,12 @@ html:has(.hero-container) {
     margin: 1.5rem auto;
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     box-sizing: border-box;
     padding: 1rem;
   }
@@ -757,15 +717,6 @@ html:has(.hero-container) {
   }
 }
 
-
-
-
-
-
-
-
-
-
 /* ---------------------- Certificaciones — SOLO RESPONSIVO ---------------------- */
 @media (max-width: 768px) {
 
@@ -776,7 +727,6 @@ html:has(.hero-container) {
     margin-bottom: 1rem;
   }
 
-  /* Imagen centrada */
   .carousel-container {
     width: 100%;
     max-width: 480px;
@@ -784,8 +734,7 @@ html:has(.hero-container) {
     overflow: hidden;
     display: flex;
     justify-content: center;
-
-    order: 1 !important; /* Imagen siempre primero */
+    order: 1 !important;
   }
 
   .carousel-track {
@@ -801,20 +750,16 @@ html:has(.hero-container) {
     padding: 8px;
   }
 
-  /* ====== 🔥 Botones en fila debajo ====== */
-
-  /* Contenedor del carrusel */
   .carousel-wrapper {
     display: flex;
-    flex-direction: column; /* vertical */
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
 
-  /* 🔥 Botones JUNTOS y ABAJO */
   .carousel-buttons {
-    order: 2 !important;      /* Botones después de la imagen */
-    display: flex !important; /* Forzamos fila */
+    order: 2 !important;
+    display: flex !important;
     flex-direction: row !important;
     justify-content: center;
     align-items: center;
@@ -839,5 +784,4 @@ html:has(.hero-container) {
     justify-content: center;
     align-items: center;
   }
-
 }
