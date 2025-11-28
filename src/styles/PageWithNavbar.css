@@ -599,23 +599,28 @@ html:has(.hero-container) {
 /* ---------------------- TOOLS RESPONSIVE PERFECTO ---------------------- */
 @media (max-width: 768px) {
 
+  /* Ajuste general de la sección Tools */
   .tools-container {
     width: 100% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
 
-    margin-top: -4rem; /* 🔥 AQUÍ SUBES TODO EL BLOQUE */
+    /* 👉 Este padding sube TODA la sección sin romper nada */
+    padding: 1rem 0 2rem 0 !important;
   }
 
+  /* Título más arriba y centrado */
   .tools-title {
     text-align: center;
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 1.2rem;
   }
 
+  /* Grid perfecta para móvil */
   .tools-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -627,6 +632,9 @@ html:has(.hero-container) {
 
     justify-items: center;
     align-items: center;
+
+    /* 👉 Ajuste para subir los iconos ligeramente */
+    padding-top: 0.5rem !important;
   }
 
   .tool-card {
