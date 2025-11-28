@@ -785,3 +785,15 @@ html:has(.hero-container) {
     align-items: center;
   }
 }
+
+/* ============================================
+   FIX EXCLUSIVO PARA PROYECTOS EN MÓVIL
+   Reveal se activa solo para .plans-grid
+   ============================================ */
+@media (max-width: 768px) {
+  .plans-grid.reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
