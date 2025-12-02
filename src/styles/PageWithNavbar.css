@@ -672,7 +672,7 @@ html:has(.hero-container) {
     box-sizing: border-box;
 
     /* 👉 Ajusta este valor para subir/bajar la sección */
-    padding: 7rem 1rem 2rem 1rem !important;
+    padding: 5.5rem 1rem 2rem 1rem !important;
   }
 
   .projects-title {
