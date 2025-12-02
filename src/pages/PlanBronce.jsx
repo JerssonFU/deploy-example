@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function PlanBronce() {
   return (
     <div style={styles.container}>
@@ -9,8 +7,6 @@ export default function PlanBronce() {
         Este plan incluye acceso a clases, talleres exclusivos y material de estudio
         para que puedas iniciar tu formación en Business Intelligence.
       </p>
-
-      <Link to="/Inicio" style={styles.button}>Volver</Link>
     </div>
   );
 }
@@ -32,13 +28,5 @@ const styles = {
     fontSize: "1.2rem",
     marginBottom: "40px",
     lineHeight: "1.6"
-  },
-  button: {
-    textDecoration: "none",
-    background: "black",
-    padding: "12px 25px",
-    borderRadius: "25px",
-    color: "white",
-    fontSize: "1.1rem"
   }
 };

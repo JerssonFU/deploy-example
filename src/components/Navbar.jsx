@@ -39,10 +39,12 @@ function Navbar() {
         )}
 
         {isPlanPage && (
-          <Link to="/Inicio" className="navbar-back-btn">
-            Volver
-          </Link>
-        )}
+  <Link to="/Inicio" className="navbar-back-btn" onClick={() => localStorage.setItem("scrollToProjects", "yes")}>
+    Volver
+  </Link>
+)}
+
+
       </div>
 
       {/* Hamburguesa */}

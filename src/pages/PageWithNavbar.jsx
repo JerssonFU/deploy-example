@@ -21,6 +21,23 @@ function PageWithNavbar() {
     }
   };
 
+
+
+// Auto-scroll si viene desde un plan
+useEffect(() => {
+  if (localStorage.getItem("scrollToProjects") === "yes") {
+    const el = document.getElementById("projects");
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+    localStorage.removeItem("scrollToProjects");
+  }
+}, []);
+
+
+
   useEffect(() => {
     if (index > 0 && index < total + 1) {
       requestAnimationFrame(() => {
