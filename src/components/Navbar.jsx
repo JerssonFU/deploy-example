@@ -16,12 +16,13 @@ function Navbar() {
   const location = useLocation();
 
   const isPlanPage =
-    location.pathname.includes("plan-bronce") ||
-    location.pathname.includes("plan-plata") ||
-    location.pathname.includes("plan-oro") ||
-    location.pathname.includes("plan-gamma") ||
-    location.pathname.includes("plan-delta") ||
-    location.pathname.includes("plan-beta");
+  location.pathname.includes("megahilos") ||
+  location.pathname.includes("caso-parking") ||
+  location.pathname.includes("plan-oro") ||
+  location.pathname.includes("plan-gamma") ||
+  location.pathname.includes("plan-delta") ||
+  location.pathname.includes("plan-beta");
+
 
   // Función para scrollear suavemente y cerrar menú
   const goTo = (id) => {

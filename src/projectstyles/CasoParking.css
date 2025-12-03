@@ -1,0 +1,161 @@
+/* =============== */
+/* CONTENEDOR BASE */
+/* =============== */
+.parking-container {
+  padding: 120px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease;
+  color: #222;
+  font-family: "Poppins", sans-serif;
+}
+
+/* TITULOS */
+.parking-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.parking-subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* TEXTO GENERAL */
+.parking-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* SECCIONES */
+.parking-section {
+  margin-bottom: 70px;
+}
+
+/* SUBTÍTULOS INTERNOS */
+.parking-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LISTAS */
+.parking-list {
+  padding-left: 25px;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-top: 10px;
+}
+
+/* ICONOS EMOJIS */
+.parking-heading span {
+  font-size: 1.8rem;
+}
+
+/* ======================= */
+/* TARJETAS DE IMÁGENES BI */
+/* ======================= */
+.img-card {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.img-card img {
+  width: 100%;
+  display: block;
+}
+
+/* ============================= */
+/* DISEÑO DEL PANEL POWER BI     */
+/* ============================= */
+
+.powerbi-wrapper {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 35px;
+}
+
+.powerbi-iframe {
+  width: 100%;
+  min-height: 550px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+.powerbi-info {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.powerbi-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.powerbi-info p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: .9;
+}
+
+
+
+/* ======================= */
+/* RESPONSIVE DESIGN */
+/* ======================= */
+
+@media (max-width: 900px) {
+
+  .parking-title {
+    font-size: 2.4rem;
+  }
+
+  .powerbi-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .powerbi-iframe {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .parking-title {
+    font-size: 2rem;
+  }
+
+  .parking-text {
+    font-size: 1.05rem;
+  }
+
+  .parking-list {
+    font-size: 1.05rem;
+  }
+}
+
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
