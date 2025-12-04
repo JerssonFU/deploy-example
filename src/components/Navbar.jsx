@@ -15,16 +15,16 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const isPlanPage =
-  location.pathname.includes("megahilos") ||
-  location.pathname.includes("caso-parking") ||
-  location.pathname.includes("plan-oro") ||
-  location.pathname.includes("plan-gamma") ||
-  location.pathname.includes("plan-delta") ||
-  location.pathname.includes("plan-beta");
+  // Detecta si estás en cualquier página de proyecto
+  const isProjectPage =
+    location.pathname.includes("megahilos") ||
+    location.pathname.includes("caso-parking") ||
+    location.pathname.includes("caso-samsung") ||
+    location.pathname.includes("plan-gamma") ||
+    location.pathname.includes("plan-delta") ||
+    location.pathname.includes("plan-beta");
 
-
-  // Función para scrollear suavemente y cerrar menú
+  // Scroll suave
   const goTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
@@ -32,24 +32,26 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-
-      {/* Texto izquierdo */}
       <div className="navbar-left">
-        {!isPlanPage && (
-          <a href="/deploy-example/" className="navbar-brand">Mi Portafolio</a>
+
+        {/* BOTÓN VOLVER para todos los proyectos */}
+        {isProjectPage ? (
+          <Link
+            to="/Inicio"
+            className="navbar-back-btn"
+            onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+          >
+            Volver
+          </Link>
+        ) : (
+          <a href="/deploy-example/" className="navbar-brand">
+            Mi Portafolio
+          </a>
         )}
-
-        {isPlanPage && (
-  <Link to="/Inicio" className="navbar-back-btn" onClick={() => localStorage.setItem("scrollToProjects", "yes")}>
-    Volver
-  </Link>
-)}
-
-
       </div>
 
-      {/* Hamburguesa */}
-      {!isPlanPage && (
+      {/* HAMBURGUESA (no aparece en proyectos) */}
+      {!isProjectPage && (
         <div className="menu-toggle" onClick={() => setIsOpen(true)}>
           <span></span>
           <span></span>
@@ -57,55 +59,61 @@ function Navbar() {
         </div>
       )}
 
-      {/* Menú Responsivo */}
       <div className={`navbar-right ${isOpen ? "open" : ""}`}>
-
-        {/* Botón cerrar */}
         <button className="close-btn" onClick={() => setIsOpen(false)}>
           &times;
         </button>
 
-        {/* CABECERA DEL MENÚ (nombre + correo) */}
-        <div className="menu-header">
-          <p className="menu-line">
-            <FaUser className="menu-icon-header" /> Jersson Fernández
-          </p>
-          <p className="menu-line">
-            <FaEnvelope className="menu-icon-header" /> jerssonfu@gmail.com
-          </p>
-        </div>
-
-        {/* Opciones del menú */}
-        {!isPlanPage && (
+        {/* Menú NORMAL del Inicio */}
+        {!isProjectPage && (
           <>
             <button className="navbar-link" onClick={() => goTo("hero")}>
-              <FaHome className="menu-icon" />
-              Inicio
+              <FaHome className="menu-icon" /> Inicio
             </button>
 
             <button className="navbar-link" onClick={() => goTo("about")}>
-              <FaUser className="menu-icon" />
-              Sobre mí
+              <FaUser className="menu-icon" /> Sobre mí
             </button>
 
             <button className="navbar-link" onClick={() => goTo("tools")}>
-              <FaTools className="menu-icon" />
-              Herramientas
+              <FaTools className="menu-icon" /> Herramientas
             </button>
 
             <button className="navbar-link" onClick={() => goTo("projects")}>
-              <FaProjectDiagram className="menu-icon" />
-              Proyectos
+              <FaProjectDiagram className="menu-icon" /> Proyectos
             </button>
 
             <button className="navbar-link" onClick={() => goTo("Certificados")}>
-              <FaCertificate className="menu-icon" />
-              Certificados
+              <FaCertificate className="menu-icon" /> Certificados
+            </button>
+          </>
+        )}
+
+        {/* 🔥 MENÚ ESPECIAL PARA *TODOS* LOS PROYECTOS 🔥 */}
+        {isProjectPage && (
+          <>
+            <button className="navbar-link" onClick={() => goTo("summary")}>
+              Resumen & Objetivos
+            </button>
+
+            <button className="navbar-link" onClick={() => goTo("etl")}>
+              Proceso ETL
+            </button>
+
+            <button className="navbar-link" onClick={() => goTo("olap")}>
+              Cubo OLAP
+            </button>
+
+            <button className="navbar-link" onClick={() => goTo("explotacion")}>
+              Explotación de Datos
+            </button>
+
+            <button className="navbar-link" onClick={() => goTo("sarimax")}>
+              SARIMAX
             </button>
           </>
         )}
       </div>
-
     </nav>
   );
 }

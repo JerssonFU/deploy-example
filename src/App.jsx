@@ -3,11 +3,12 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import PageWithNavbar from "./pages/PageWithNavbar";
 
-/* Nuevos nombres */
+/* Proyectos principales */
 import MegahilosSAC from "./pages/MegahilosSAC";
 import CasoParking from "./pages/CasoParking";
+import CasoSamsung from "./pages/CasoSamsung";  // ← nuevo caso
 
-import PlanOro from "./pages/PlanOro";
+/* Otros planes */
 import PlanBeta from "./pages/PlanBeta";
 import PlanGamma from "./pages/PlanGamma";
 import PlanDelta from "./pages/PlanDelta";
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      {/* Mostrar navbar excepto en "/" */}
       {location.pathname !== "/" && <Navbar />}
 
       <Routes>
@@ -26,12 +28,12 @@ function App() {
         {/* Página principal del portafolio */}
         <Route path="/Inicio" element={<PageWithNavbar />} />
 
-        {/* Nuevos proyectos renombrados */}
+        {/* Casos empresariales */}
         <Route path="/megahilos" element={<MegahilosSAC />} />
         <Route path="/caso-parking" element={<CasoParking />} />
+        <Route path="/caso-samsung" element={<CasoSamsung />} />  {/* ← nueva ruta */}
 
-        {/* Otros planes que no cambian */}
-        <Route path="/plan-oro" element={<PlanOro />} />
+        {/* Planes (que no son casos) */}
         <Route path="/plan-beta" element={<PlanBeta />} />
         <Route path="/plan-gamma" element={<PlanGamma />} />
         <Route path="/plan-delta" element={<PlanDelta />} />

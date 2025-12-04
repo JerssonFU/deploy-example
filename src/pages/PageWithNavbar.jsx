@@ -129,79 +129,113 @@ useEffect(() => {
   <div className="plans-grid">
 
     {/* 1 — Megahilos S.A.C */}
-    <div className="plan-card">
+    <div className="plan-card reveal">
       <img src="./assets/re.jpeg" alt="Megahilos S.A.C" />
       <div className="plan-card-content">
         <h3>Megahilos S.A.C</h3>
         <p className="plan-state">COMPLETE</p>
         <p>Proyecto empresarial</p>
         <p className="plan-desc">Análisis y desarrollo para Megahilos S.A.C.</p>
-        <Link to="/megahilos" className="plan-button">Ver Proyecto</Link>
+        <Link 
+          to="/megahilos" 
+          className="plan-button"
+          onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+        >
+          Ver Proyecto
+        </Link>
       </div>
     </div>
 
     {/* 2 — Caso Parking */}
-    <div className="plan-card">
+    <div className="plan-card reveal">
       <img src="./assets/re.jpeg" alt="Caso Parking" />
       <div className="plan-card-content">
         <h3>Caso Parking</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Estudio aplicado</p>
-        <p className="plan-desc">Optimización de un sistema de estacionamiento.</p>
-        <Link to="/caso-parking" className="plan-button">Ver Proyecto</Link>
+        <p className="plan-desc">Optimización del flujo de estacionamiento.</p>
+        <Link 
+          to="/caso-parking" 
+          className="plan-button"
+          onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+        >
+          Ver Proyecto
+        </Link>
       </div>
     </div>
 
-    {/* 3 — Plan Oro */}
-    <div className="plan-card">
-      <img src="./assets/re.jpeg" alt="Plan Oro" />
+    {/* 3 — Caso Samsung (nuevo) */}
+    <div className="plan-card reveal">
+      <img src="./assets/re.jpeg" alt="Caso Samsung" />
       <div className="plan-card-content">
-        <h3>Plan Oro</h3>
+        <h3>Caso Samsung</h3>
         <p className="plan-state">IN PROGRESS</p>
-        <p>Por única vez</p>
-        <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
-        <Link to="/plan-oro" className="plan-button">Registrarse</Link>
+        <p>Business Intelligence</p>
+        <p className="plan-desc">Modelo BI para análisis operativo de Samsung Perú.</p>
+        <Link 
+          to="/caso-samsung" 
+          className="plan-button"
+          onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+        >
+          Ver Proyecto
+        </Link>
       </div>
     </div>
 
     {/* 4 — Plan Beta */}
-    <div className="plan-card">
+    <div className="plan-card reveal">
       <img src="./assets/re.jpeg" alt="Plan Beta" />
       <div className="plan-card-content">
         <h3>Plan Beta</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Por única vez</p>
-        <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
-        <Link to="/plan-beta" className="plan-button">Registrarse</Link>
+        <p className="plan-desc">Acceso ilimitado a clases exclusivas.</p>
+        <Link 
+          to="/plan-beta" 
+          className="plan-button"
+        >
+          Registrarse
+        </Link>
       </div>
     </div>
 
     {/* 5 — Plan Gamma */}
-    <div className="plan-card">
+    <div className="plan-card reveal">
       <img src="./assets/re.jpeg" alt="Plan Gamma" />
       <div className="plan-card-content">
         <h3>Plan Gamma</h3>
         <p className="plan-state">COMPLETE</p>
         <p>Por única vez</p>
-        <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
-        <Link to="/plan-gamma" className="plan-button">Registrarse</Link>
+        <p className="plan-desc">Acceso ilimitado a clases exclusivas.</p>
+        <Link 
+          to="/plan-gamma" 
+          className="plan-button"
+        >
+          Registrarse
+        </Link>
       </div>
     </div>
 
     {/* 6 — Plan Delta */}
-    <div className="plan-card">
+    <div className="plan-card reveal">
       <img src="./assets/re.jpeg" alt="Plan Delta" />
       <div className="plan-card-content">
         <h3>Plan Delta</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Por única vez</p>
-        <p className="plan-desc">Acceso ilimitado a clases y talleres exclusivos.</p>
-        <Link to="/plan-delta" className="plan-button">Registrarse</Link>
+        <p className="plan-desc">Acceso ilimitado a clases exclusivas.</p>
+        <Link 
+          to="/plan-delta" 
+          className="plan-button"
+        >
+          Registrarse
+        </Link>
       </div>
     </div>
 
   </div>
 </div>
+
 
 
           {/* CERTIFICADOS */}
