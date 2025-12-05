@@ -15,20 +15,18 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Detecta si estás en cualquier página de proyecto
-  const isProjectPage =
-    location.pathname.includes("megahilos") ||
-    location.pathname.includes("caso-parking") ||
-    location.pathname.includes("caso-samsung") ||
-    location.pathname.includes("plan-gamma") ||
-    location.pathname.includes("plan-delta") ||
-    location.pathname.includes("plan-beta");
+  const projectRoutes = ["/megahilos", "/caso-parking", "/caso-samsung", "/plan-gamma", "/plan-delta", "/plan-beta"];
 
-  // Scroll suave
+const isProjectPage = projectRoutes.includes(location.pathname);
+
   const goTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
-  };
+  const el = document.getElementById(id);
+  if (!el) return;  // evita errores
+
+  el.scrollIntoView({ behavior: "smooth" });
+  setIsOpen(false);
+};
+
 
   return (
     <nav className="navbar">
@@ -37,12 +35,14 @@ function Navbar() {
         {/* BOTÓN VOLVER para todos los proyectos */}
         {isProjectPage ? (
           <Link
-            to="/Inicio"
-            className="navbar-back-btn"
-            onClick={() => localStorage.setItem("scrollToProjects", "yes")}
-          >
-            Volver
-          </Link>
+  to="/Inicio"
+  className="navbar-back-btn"
+  onClick={() => {
+    localStorage.setItem("goToSection", "projects");
+  }}
+>
+  Volver
+</Link>
         ) : (
           <a href="/deploy-example/" className="navbar-brand">
             Mi Portafolio

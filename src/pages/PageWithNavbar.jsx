@@ -5,7 +5,6 @@ import "../styles/Inicio.css";
 
 function PageWithNavbar() {
 
-  /* --- CONFIGURACIÓN DEL CARRUSEL INFINITO REAL --- */
   const total = 6;
   const [index, setIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -21,51 +20,112 @@ function PageWithNavbar() {
     }
   };
 
+  /* ---------------------------
+        SCROLL SUAVE
+  ---------------------------- */
+  function smoothScrollTo(targetY, duration = 650) {
+    const startY = window.scrollY;
+    const diff = targetY - startY;
+    let start;
 
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const time = timestamp - start;
+      const percent = Math.min(time / duration, 1);
 
-// Auto-scroll si viene desde un plan
-useEffect(() => {
-  if (localStorage.getItem("scrollToProjects") === "yes") {
-    const el = document.getElementById("projects");
-    if (el) {
-      setTimeout(() => {
-        el.scrollIntoView({ behavior: "smooth" });
-      }, 100);
+      const ease = 1 - Math.pow(1 - percent, 3);
+
+      window.scrollTo(0, startY + diff * ease);
+
+      if (time < duration) requestAnimationFrame(step);
     }
-    localStorage.removeItem("scrollToProjects");
+
+    requestAnimationFrame(step);
   }
+
+useEffect(() => {
+  const images = [
+    "./assets/megahilos.webp",
+    "./assets/parking.webp",
+    "./assets/samsung1.webp"
+  ];
+
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+
+    // 👇 Esto obliga a Chrome a decodificar de inmediato
+    img.decode?.().catch(() => {});
+  });
 }, []);
 
 
 
-  useEffect(() => {
-    if (index > 0 && index < total + 1) {
-      requestAnimationFrame(() => {
-        setIsTransitioning(true);
+
+
+
+/* ---------------------------
+     AUTO-SCROLL A PROYECTOS
+---------------------------- */
+useEffect(() => {
+  const section = localStorage.getItem("goToSection");
+
+  if (section === "projects") {
+    const el = document.getElementById("projects");
+    if (el) {
+      // 👉 Que el navegador haga el cálculo exacto
+      window.requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "auto", block: "start" });
       });
     }
-  }, [index]);
+  }
 
-  /* === SISTEMA REVEAL === */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+  localStorage.removeItem("goToSection");
+}, []);
 
-    // 👇 Ahora observa reveal GENERAL y CADA tarjeta
-    document
-      .querySelectorAll(".reveal, .plan-card")
-      .forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
-  }, []);
+
+
+/* ---------------------------------------------------
+  🔥 FIX ANTI-SALTO: tarjetas visibles al volver
+--------------------------------------------------- */
+useEffect(() => {
+  const comingFromProject = localStorage.getItem("goToSection") === "projects";
+
+  if (comingFromProject) {
+    document.querySelectorAll(".plan-card").forEach(card => {
+      card.classList.add("visible");
+    });
+  }
+}, []);
+
+
+/* ---------------------------------------------------
+      ⭐ REVEAL ULTRA OPTIMIZADO SIN MICROCORTES
+--------------------------------------------------- */
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.01,
+      rootMargin: "0px 0px -10% 0px"
+    }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  document.querySelectorAll(".plan-card").forEach((card) => observer.observe(card));
+
+  return () => observer.disconnect();
+}, []);
+
+
 
   return (
     <div className="inicio-container">
@@ -92,8 +152,8 @@ useEffect(() => {
               <h2>Sobre mí</h2>
               <p>
                 Soy Jersson Jair Fernández Uchuya, especialista en Business Intelligence.
-                Me apasiona transformar datos en estrategias efectivas que impulsen la toma de decisiones en las organizaciones.
-                Manejo herramientas como Power BI, Python, SQL Server y frameworks de Front-End para ofrecer soluciones completas.
+                Me apasiona transformar datos en estrategias efectivas que impulsen
+                la toma de decisiones en las organizaciones.
               </p>
 
               <a
@@ -108,7 +168,7 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* TOOLS */}
+          {/* TOOLS SECTION */}
           <div id="tools" className="tools-container">
             <h2 className="tools-title reveal">Manejo de Herramientas Informáticas</h2>
 
@@ -128,18 +188,23 @@ useEffect(() => {
 
   <div className="plans-grid">
 
-    {/* 1 — Megahilos S.A.C */}
+    {/* 1 — Megahilos */}
     <div className="plan-card reveal">
-      <img src="./assets/re.jpeg" alt="Megahilos S.A.C" />
+      <img 
+        src="./assets/megahilos.webp" 
+        alt="Megahilos S.A.C" 
+        width="400" 
+        height="225"
+      />
       <div className="plan-card-content">
         <h3>Megahilos S.A.C</h3>
         <p className="plan-state">COMPLETE</p>
         <p>Proyecto empresarial</p>
         <p className="plan-desc">Análisis y desarrollo para Megahilos S.A.C.</p>
         <Link 
-          to="/megahilos" 
+          to="/megahilos"
           className="plan-button"
-          onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+          onClick={() => localStorage.setItem("goToSection", "projects")}
         >
           Ver Proyecto
         </Link>
@@ -148,34 +213,44 @@ useEffect(() => {
 
     {/* 2 — Caso Parking */}
     <div className="plan-card reveal">
-      <img src="./assets/re.jpeg" alt="Caso Parking" />
+      <img 
+        src="./assets/parking.webp" 
+        alt="Caso Parking" 
+        width="400" 
+        height="225"
+      />
       <div className="plan-card-content">
         <h3>Caso Parking</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Estudio aplicado</p>
         <p className="plan-desc">Optimización del flujo de estacionamiento.</p>
         <Link 
-          to="/caso-parking" 
+          to="/caso-parking"
           className="plan-button"
-          onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+          onClick={() => localStorage.setItem("goToSection", "projects")}
         >
           Ver Proyecto
         </Link>
       </div>
     </div>
 
-    {/* 3 — Caso Samsung (nuevo) */}
+    {/* 3 — Caso Samsung */}
     <div className="plan-card reveal">
-      <img src="./assets/re.jpeg" alt="Caso Samsung" />
+      <img 
+        src="./assets/samsung1.webp" 
+        alt="Caso Samsung" 
+        width="400" 
+        height="225"
+      />
       <div className="plan-card-content">
         <h3>Caso Samsung</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Business Intelligence</p>
         <p className="plan-desc">Modelo BI para análisis operativo de Samsung Perú.</p>
         <Link 
-          to="/caso-samsung" 
+          to="/caso-samsung"
           className="plan-button"
-          onClick={() => localStorage.setItem("scrollToProjects", "yes")}
+          onClick={() => localStorage.setItem("goToSection", "projects")}
         >
           Ver Proyecto
         </Link>
@@ -184,15 +259,21 @@ useEffect(() => {
 
     {/* 4 — Plan Beta */}
     <div className="plan-card reveal">
-      <img src="./assets/re.jpeg" alt="Plan Beta" />
+      <img 
+        src="./assets/re.webp" 
+        alt="Plan Beta" 
+        width="400" 
+        height="225"
+      />
       <div className="plan-card-content">
         <h3>Plan Beta</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Por única vez</p>
         <p className="plan-desc">Acceso ilimitado a clases exclusivas.</p>
         <Link 
-          to="/plan-beta" 
+          to="/plan-beta"
           className="plan-button"
+          onClick={() => localStorage.setItem("goToSection", "projects")}
         >
           Registrarse
         </Link>
@@ -201,15 +282,21 @@ useEffect(() => {
 
     {/* 5 — Plan Gamma */}
     <div className="plan-card reveal">
-      <img src="./assets/re.jpeg" alt="Plan Gamma" />
+      <img 
+        src="./assets/re.webp" 
+        alt="Plan Gamma" 
+        width="400" 
+        height="225"
+      />
       <div className="plan-card-content">
         <h3>Plan Gamma</h3>
         <p className="plan-state">COMPLETE</p>
         <p>Por única vez</p>
         <p className="plan-desc">Acceso ilimitado a clases exclusivas.</p>
         <Link 
-          to="/plan-gamma" 
+          to="/plan-gamma"
           className="plan-button"
+          onClick={() => localStorage.setItem("goToSection", "projects")}
         >
           Registrarse
         </Link>
@@ -218,15 +305,21 @@ useEffect(() => {
 
     {/* 6 — Plan Delta */}
     <div className="plan-card reveal">
-      <img src="./assets/re.jpeg" alt="Plan Delta" />
+      <img 
+        src="./assets/re.webp" 
+        alt="Plan Delta" 
+        width="400" 
+        height="225"
+      />
       <div className="plan-card-content">
         <h3>Plan Delta</h3>
         <p className="plan-state">IN PROGRESS</p>
         <p>Por única vez</p>
         <p className="plan-desc">Acceso ilimitado a clases exclusivas.</p>
         <Link 
-          to="/plan-delta" 
+          to="/plan-delta"
           className="plan-button"
+          onClick={() => localStorage.setItem("goToSection", "projects")}
         >
           Registrarse
         </Link>
@@ -238,7 +331,7 @@ useEffect(() => {
 
 
 
-          {/* CERTIFICADOS */}
+          {/* CERTIFICATE CAROUSEL */}
           <div id="Certificados" className="certificates-showcase">
             <h2 className="certificates-title reveal">Certificados Obtenidos</h2>
 
@@ -252,16 +345,14 @@ useEffect(() => {
                     transition: isTransitioning ? "transform 0.55s ease-in-out" : "none"
                   }}
                 >
-
-                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert2.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert3.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert4.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert5.png" loading="lazy" /></div>
-                  <div className="slide"><img src="./assets/cert1.png" loading="lazy" /></div>
-
+                  <div className="slide"><img src="./assets/cert5.png" /></div>
+                  <div className="slide"><img src="./assets/cert1.png" /></div>
+                  <div className="slide"><img src="./assets/cert2.png" /></div>
+                  <div className="slide"><img src="./assets/cert3.png" /></div>
+                  <div className="slide"><img src="./assets/cert4.png" /></div>
+                  <div className="slide"><img src="./assets/cert5.png" /></div>
+                  <div className="slide"><img src="./assets/cert5.png" /></div>
+                  <div className="slide"><img src="./assets/cert1.png" /></div>
                 </div>
               </div>
 

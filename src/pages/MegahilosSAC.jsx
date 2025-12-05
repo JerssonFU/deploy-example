@@ -1,6 +1,17 @@
 import "../projectstyles/MegahilosSac.css";
+import { useEffect } from "react";
 
 export default function MegahilosSAC() {
+
+  // 🔥 Siempre iniciar el proyecto en el top de la página
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant" // sin animación para evitar lag
+    });
+  }, []);
+
   return (
     <div className="mh-container">
 

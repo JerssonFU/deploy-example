@@ -1,6 +1,17 @@
 import "../projectstyles/CasoParking.css";
+import { useEffect } from "react";
 
 export default function CasoParking() {
+
+  // 🔥 Siempre iniciar este proyecto en el top de la página
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    });
+  }, []);
+
   return (
     <div className="parking-container">
 
@@ -34,7 +45,6 @@ export default function CasoParking() {
         </div>
       </section>
 
-
       {/* ================================================= */}
       {/* 2. PANTALLA COMPLETA: PROCESO ETL */}
       {/* ================================================= */}
@@ -53,7 +63,6 @@ export default function CasoParking() {
         </div>
       </section>
 
-
       {/* ================================================= */}
       {/* 3. PANTALLA COMPLETA: CUBO OLAP */}
       {/* ================================================= */}
@@ -71,7 +80,6 @@ export default function CasoParking() {
           </div>
         </div>
       </section>
-
 
       {/* ================================================= */}
       {/* 4. PANTALLA COMPLETA: EXPLOTACIÓN DE DATOS */}
@@ -97,7 +105,6 @@ export default function CasoParking() {
           <li>Comparativos entre días de la semana.</li>
         </ul>
       </section>
-
 
       {/* ================================================= */}
       {/* 5. PANTALLA COMPLETA: SARIMAX */}

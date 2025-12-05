@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function PlanGamma() {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Plan Gamma</h1>

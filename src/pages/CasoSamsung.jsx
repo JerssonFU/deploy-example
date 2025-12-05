@@ -1,6 +1,13 @@
 import "../projectstyles/CasoSamsung.css";
+import { useEffect } from "react";
 
 export default function CasoSamsung() {
+
+  // 🔥 Scroll al inicio siempre
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   return (
     <div className="samsung-container">
 
